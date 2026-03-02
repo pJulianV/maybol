@@ -1,0 +1,23 @@
+# ── Old Jimdo-downloaded source files ──────────────────
+*_files/
+Awards _ Meybol Cacao Germany GmbH.html
+Kakaonibs - Kakaozeremonie _ Meybol Cacao Germany GmbH.html
+Kakaosorten - Nachhaltigkeit & Kakaoproduktion _ Meybol Cacao Germany GmbH.html
+Kakaozeremonie _ Meybol Cacao Germany GmbH.html
+KONTAKTFORMULAR _ Meybol Cacao Germany GmbH.html
+Pressebereich - KONTAKTFORMULAR _ Meybol Cacao Germany GmbH.html
+PROJEKT MISKY, INTI & AILLA - Hilfsprojekte - Nachhaltigkeit & Kakaoproduktion _ Meybol Cacao Germany GmbH.html
+Shop _ Meybol Cacao Germany GmbH.html
+
+# ── Download scripts (dev tooling, not part of the site) ─
+cloudscraper_download.py
+download_playwright.py
+download_site.py
+
+# ── OS & editor noise ──────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+*.swp
+*.swo
