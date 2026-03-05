@@ -3,197 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meybol Cacao Germany GmbH – Handgemachte Schokolade aus Peru</title>
-  <meta name="description" content="Meybol Cacao – Mehrfach prämierte, handgemachte Tree-to-Bar Schokolade aus seltenem peruanischen Urkakao. International Chocolate Award Gewinner.">
-  <link rel="stylesheet" href="assets/style.css">
+  <title>Meybol – Schokolade & Kaffee</title>
+  <!-- reuse existing styles from the sub‑sites -->
+  <link rel="stylesheet" href="maybolcacao/assets/style.css">
+  <link rel="stylesheet" href="maybolcoffe/assets/style.css">
+  <style>
+    /* minimal overrides for the landing cards */
+    body { font-family: var(--font-body, Arial, sans-serif); background: var(--light-bg, #f9f9f9); color: var(--darker, #333); }
+    header { text-align:center; padding:4rem 1rem; background:var(--white); box-shadow:0 2px 8px rgba(0,0,0,.1); }
+    header h1 { margin:.5rem 0; font-size:2.5rem; }
+    header p { margin:0; font-size:1.2rem; color:var(--dark, #666); }
+    main { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; min-height:60vh; }
+    .card { background:var(--white); margin:1rem; padding:2rem; width:300px; text-align:center; box-shadow:var(--shadow); border-radius:var(--radius); transition:transform var(--transition); }
+    .card:hover { transform:translateY(-4px); }
+    .card a { display:inline-block; margin-top:1rem; padding:.75rem 1.5rem; background:var(--primary-dk,#7a5a4b); color:var(--white); text-decoration:none; border-radius:4px; }
+  </style>
 </head>
 <body>
-<script src="assets/nav.js"></script>
-
-<!-- HERO -->
-<section class="hero" style="min-height:90vh;">
-  <img class="hero__img"
-    src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;0;0,width=1920,height=1250/image/325755915/3e76d6ad-cfab-4bc1-aefe-519c378dd38e.jpg"
-    alt="Meybol Cacao – Handgemachte Schokolade aus Peru"
-    loading="eager">
-  <div class="hero__overlay"></div>
-  <div class="hero__content">
-    <p class="hero__subtitle">Tree-to-Bar · Urkakao aus Peru</p>
-    <h1 class="hero__title">Mehrfach prämierte<br>Edelschokolade</h1>
-    <p class="hero__lead">Handgemacht aus seltenen Chuncho-Kakaobohnen. Nachhaltig, fair und einzigartig im Geschmack.</p>
-    <a href="shop.html" class="btn btn-primary">Jetzt entdecken</a>
-    &ensp;
-    <a href="awards.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.7);color:#fff;">Unsere Awards</a>
-  </div>
-  <div class="hero__scroll">scrollen</div>
-</section>
-
-<!-- FEATURES STRIP -->
-<section class="section-pad bg-cream">
-  <div class="container">
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-card__icon">🌿</div>
-        <div class="feature-card__title">Tree-to-Bar</div>
-        <p>Von der Kakaobohne bis zur fertigen Tafel – vollständige Kontrolle über jeden Produktionsschritt.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card__icon">🏆</div>
-        <div class="feature-card__title">Mehrfach ausgezeichnet</div>
-        <p>International Chocolate Award Gewinner von 2018 bis 2022 – Gold, Silber und Bronze.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card__icon">🌱</div>
-        <div class="feature-card__title">Nachhaltigkeit</div>
-        <p>Faire Preise für Kleinbauern im Amazonasgebiet und aktiver Schutz des Regenwaldes.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card__icon">🫘</div>
-        <div class="feature-card__title">Seltener Urkakao</div>
-        <p>100% Chuncho-Kakao – eine der ältesten Kakaosorten Perus mit einzigartigem Aromaprofil.</p>
-      </div>
+  <header>
+    <h1>Willkommen bei Meybol</h1>
+    <p>Handgemachte Schokolade &amp; Premium-Kaffee aus Peru</p>
+  </header>
+  <main>
+    <div class="card">
+      <h2>Meybol Cacao</h2>
+      <p>Tree‑to‑Bar Schokolade aus seltenem peruanischen Urkakao.</p>
+      <a href="maybolcacao/index.html">Zur Cacao‑Seite →</a>
     </div>
-  </div>
-</section>
-
-<!-- INTRO SECTION -->
-<section class="section-pad-lg">
-  <div class="container">
-    <div class="two-col">
-      <div class="col-img">
-        <img
-          src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=918;0;918;0,width=1024,height=1024/image/390854510/9a3e26b8-bc8f-4d74-afac-f81a295fb925.png"
-          alt="Meybol Cacao Premium Schokolade" loading="lazy">
-      </div>
-      <div>
-        <span class="section-label">Über uns</span>
-        <h2 class="section-title">Wahrer Luxus beginnt beim Kakao – nicht bei der Verpackung</h2>
-        <div class="divider" style="margin-left:0;"></div>
-        <p>Meybol Cacao steht für eine neue Art des Schokoladegenusses: Ehrlich, transparent und mit einem einzigartigen Fokus auf den Ursprung des Kakaos. Unsere Schokoladen werden aus seltenen Chuncho-Kakaobohnen handgemacht, die direkt von Kleinbauern im peruanischen Amazonasgebiet stammen.</p>
-        <p>Wir verarbeiten ausschließlich 100% Kakaobutter – ohne Fremdöle oder künstliche Zusätze. Jede Tafel erzählt die Geschichte des Landes, in dem sie wächst.</p>
-        <a href="shop.html" class="btn btn-primary" style="margin-top:1rem;">Zum Shop</a>
-      </div>
+    <div class="card">
+      <h2>Meybol Coffee</h2>
+      <p>100 % Arabica Hochlandkaffee – nachhaltig und fair.</p>
+      <a href="maybolcoffe/index.html">Zur Coffee‑Seite →</a>
     </div>
-  </div>
-</section>
-
-<!-- FEATURED PRODUCTS -->
-<section class="section-pad bg-light">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-label">Bestseller</span>
-      <h2 class="section-title">Ausgewählte Produkte</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="products-grid">
-      <!-- Inti -->
-      <div class="product-card">
-        <div class="product-card__img-wrap">
-          <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=788;0;787;0,width=800,height=800/image/390853606/324cd3f6-6bda-4404-8e84-3b5afc224e84.png" alt="Inti Schokolade 70%" loading="lazy">
-          <span class="product-card__badge gold">Gold 2024</span>
-        </div>
-        <div class="product-card__body">
-          <div class="product-card__type">Projektschokolade</div>
-          <div class="product-card__name">Inti Schokolade 70%</div>
-          <div class="product-card__price">8,00 €</div>
-          <a href="https://www.meybolcacao.de/shop/inti-schokolade---gold-praemierte-bean-to-bar-schokolade-2024-70-edelkakao-chuncho-aus-peru/" target="_blank" class="product-card__link">Jetzt kaufen →</a>
-        </div>
-      </div>
-      <!-- AILLA -->
-      <div class="product-card">
-        <div class="product-card__img-wrap">
-          <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=918;0;918;0,width=800,height=800/image/390854510/9a3e26b8-bc8f-4d74-afac-f81a295fb925.png" alt="AILLA Dunkelschokolade 65%" loading="lazy">
-        </div>
-        <div class="product-card__body">
-          <div class="product-card__type">Projektschokolade</div>
-          <div class="product-card__name">AILLA – Dunkelschokolade 65%</div>
-          <div class="product-card__price">8,00 €</div>
-          <a href="https://www.meybolcacao.de/shop/ailla---nachhaltige-dunkelschokolade-65-fuer-biodiversitaet-und-amazonas-schutz/" target="_blank" class="product-card__link">Jetzt kaufen →</a>
-        </div>
-      </div>
-      <!-- Solo Kakao 90% -->
-      <div class="product-card">
-        <div class="product-card__img-wrap">
-          <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;1120;0;1120,width=800,height=800/image/326515932/d5dcfe44-b8ce-49c2-bacb-8ea869190330.jpg" alt="Solo Kakao 90%" loading="lazy">
-          <span class="product-card__badge gold">Gold 2022</span>
-        </div>
-        <div class="product-card__body">
-          <div class="product-card__type">Limited Edition</div>
-          <div class="product-card__name">SOLO KAKAO 90% Limited Edition</div>
-          <div class="product-card__price">20,00 €</div>
-          <a href="https://www.meybolcacao.de/shop/" target="_blank" class="product-card__link">Jetzt kaufen →</a>
-        </div>
-      </div>
-      <!-- Chuncho Collection N3 -->
-      <div class="product-card">
-        <div class="product-card__img-wrap">
-          <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;1120;0;1120,width=800,height=800/image/332008969/c6dd8b22-b53f-42e0-bb97-7c82fbba73c3.jpg" alt="Chuncho Collection N3" loading="lazy">
-        </div>
-        <div class="product-card__body">
-          <div class="product-card__type">Collection</div>
-          <div class="product-card__name">N°3 Chuncho Collection 72%</div>
-          <div class="product-card__price">18,00 €</div>
-          <a href="https://www.meybolcacao.de/shop/" target="_blank" class="product-card__link">Jetzt kaufen →</a>
-        </div>
-      </div>
-    </div>
-    <div class="text-center" style="margin-top:2.5rem;">
-      <a href="shop.html" class="btn btn-outline">Alle Produkte ansehen</a>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS TEASER -->
-<section class="section-pad-lg">
-  <div class="container">
-    <div class="two-col reverse">
-      <div>
-        <span class="section-label">Nachhaltigkeit</span>
-        <h2 class="section-title">Mehr als Schokolade – ein Beitrag zum Regenwald</h2>
-        <div class="divider" style="margin-left:0;"></div>
-        <p>Mit unseren Projektschokoladen <strong>Inti</strong>, <strong>Misky</strong> und <strong>Ailla</strong> unterstützen wir die Aufforstung des Regenwaldes, die Artenvielfalt und die Kleinbauern im VRAEM, Peru.</p>
-        <p>Gemeinsam mit unseren Partnerbauern wollen wir mehr Bäume pflanzen, die Natur regenerieren und nachhaltige Landwirtschaft fördern.</p>
-        <div class="pull-quote">„Sei das Gute, das du dir wünschst für diese Welt."</div>
-        <a href="projekt.html" class="btn btn-primary">Mehr erfahren</a>
-      </div>
-      <div class="col-img">
-        <img
-          src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=168;0;168;0,width=1280,height=563/image/93015331/c63ac273-585a-4f87-98e1-8109de60d45b.png"
-          alt="Kakao Projekt Peru" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AWARDS BANNER -->
-<section class="cta-banner">
-  <div class="container">
-    <h2>International Chocolate Award Gewinner 2018–2022</h2>
-    <p>Mehrfach mit Gold, Silber und Bronze ausgezeichnet – auf nationaler und internationaler Ebene.</p>
-    <a href="awards.html" class="btn btn-dark">Unsere Auszeichnungen</a>
-  </div>
-</section>
-
-<!-- CEREMONY TEASER -->
-<section class="section-pad bg-cream">
-  <div class="container">
-    <div class="two-col">
-      <div class="col-img">
-        <img
-          src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;482;0;482,width=1024,height=1024/image/c28ef1fd-cec1-4394-ac09-08532375a508.jpg"
-          alt="Kakaozeremonie" loading="lazy">
-      </div>
-      <div>
-        <span class="section-label">Kakaozeremonie</span>
-        <h2 class="section-title">Öffne dein Herz mit Munay – der Kraft der Liebe</h2>
-        <div class="divider" style="margin-left:0;"></div>
-        <p>Unsere Zeremonieschokolade <strong>MUNAY</strong> lädt zu einer transformativen Erfahrung ein. Schon seit der Zeit der Inkas wurde Kakao als heiliges Getränk genutzt, das Körper, Geist und Seele verbindet.</p>
-        <a href="kakaozeremonie.html" class="btn btn-primary" style="margin-top:1rem;">Zur Kakaozeremonie</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script src="assets/footer.js"></script>
+  </main>
 </body>
 </html>
