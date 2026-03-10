@@ -38,3 +38,5 @@ COMPETENCIA:
 - **Identificar secciones** que puedan actualizarse o agregarse comparando con competidores.
 
 ---
+
+seccion awards https://enter.chocolateawards.com/

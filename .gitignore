@@ -1,0 +1,5 @@
+# ignore video files globally
+*.mp4
+*.mov
+*.avi
+*.mkv

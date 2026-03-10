@@ -21,3 +21,9 @@ desktop.ini
 .vscode/
 *.swp
 *.swo
+
+# ── Video assets (ignore large files) ───────────────────
+*.mp4
+*.mov
+VIDEOS*/
+
