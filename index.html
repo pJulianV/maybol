@@ -1,40 +1,214 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meybol – Schokolade & Kaffee</title>
-  <!-- reuse existing styles from the sub‑sites -->
-  <link rel="stylesheet" href="maybolcacao/assets/style.css">
-  <link rel="stylesheet" href="maybolcoffe/assets/style.css">
+  <title>Meybol - Schokolade &amp; Kaffee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    /* minimal overrides for the landing cards */
-    body { font-family: var(--font-body, Arial, sans-serif); background: var(--light-bg, #f9f9f9); color: var(--darker, #333); }
-    header { text-align:center; padding:4rem 1rem; background:var(--white); box-shadow:0 2px 8px rgba(0,0,0,.1); }
-    header h1 { margin:.5rem 0; font-size:2.5rem; }
-    header p { margin:0; font-size:1.2rem; color:var(--dark, #666); }
-    main { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; min-height:60vh; }
-    .card { background:var(--white); margin:1rem; padding:2rem; width:300px; text-align:center; box-shadow:var(--shadow); border-radius:var(--radius); transition:transform var(--transition); }
-    .card:hover { transform:translateY(-4px); }
-    .card a { display:inline-block; margin-top:1rem; padding:.75rem 1.5rem; background:var(--primary-dk,#7a5a4b); color:var(--white); text-decoration:none; border-radius:4px; }
+    :root {
+      --cacao-primary:  #bd9a90;
+      --cacao-dk:       #a07d73;
+      --cacao-cream:    #f5f0ed;
+      --coffee-primary: #b79770;
+      --coffee-dk:      #9a7d57;
+      --gold-light:     #e8d5b8;
+      --warm-brown:     #6b4c3b;
+      --light-bg:       #faf8f7;
+      --white:          #ffffff;
+      --darker:         #4a4a4a;
+      --font-head:      'Prompt', sans-serif;
+      --font-body:      'Roboto', Arial, sans-serif;
+      --radius:         8px;
+      --shadow:         0 6px 24px rgba(0,0,0,.13);
+      --transition:     .25s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--light-bg); color: var(--darker); }
+    a    { text-decoration: none; color: inherit; }
+
+    .hero-header {
+      background: linear-gradient(135deg, var(--cacao-dk) 0%, var(--cacao-primary) 38%, var(--coffee-primary) 65%, var(--coffee-dk) 100%);
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='8' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+    }
+    .hero-header h1 {
+      color: var(--white);
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      margin-bottom: .75rem;
+      text-shadow: 0 2px 14px rgba(0,0,0,.3);
+      position: relative;
+    }
+    .hero-header p {
+      color: rgba(255,255,255,.92);
+      font-size: 1.15rem;
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero-accent-bar {
+      width: 80px; height: 4px;
+      background: rgba(255,255,255,.6);
+      margin: 1.25rem auto .75rem;
+      border-radius: 2px;
+    }
+    .tagline-strip { display: flex; justify-content: center; }
+    .tagline-strip span {
+      flex: 1; max-width: 300px; text-align: center;
+      padding: .75rem 1rem; font-size: .82rem; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase; color: var(--white);
+    }
+    .tag-cacao  { background: var(--cacao-dk); }
+    .tag-coffee { background: var(--coffee-dk); }
+
+    .cards-section {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 2.5rem; padding: 5rem 2rem; background: var(--light-bg);
+    }
+    .brand-card {
+      background: var(--white); width: 320px; border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .brand-card:hover { transform: translateY(-7px); box-shadow: 0 14px 36px rgba(0,0,0,.18); }
+    .brand-card__header { padding: 2.25rem 2rem 1.75rem; text-align: center; }
+    .brand-card__header--cacao {
+      background: linear-gradient(160deg, var(--cacao-cream), var(--gold-light));
+      border-bottom: 3px solid var(--cacao-primary);
+    }
+    .brand-card__header--coffee {
+      background: linear-gradient(160deg, #f5ede0, var(--gold-light));
+      border-bottom: 3px solid var(--coffee-primary);
+    }
+    .brand-card__icon  { font-size: 3rem; margin-bottom: .5rem; }
+    .brand-card__title { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; color: var(--warm-brown); }
+    .brand-card__body  { padding: 1.5rem 2rem 2rem; }
+    .brand-card__body p { color: var(--darker); font-size: .97rem; line-height: 1.7; margin-bottom: 1.25rem; }
+    .brand-card__tags  { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.4rem; }
+    .pill { font-size: .74rem; font-weight: 600; letter-spacing: .04em; padding: .25rem .7rem; border-radius: 20px; }
+    .pill--cacao  { background: var(--cacao-cream); color: var(--cacao-dk);  border: 1px solid var(--cacao-primary); }
+    .pill--coffee { background: #f5ede0;             color: var(--coffee-dk); border: 1px solid var(--coffee-primary); }
+    .btn-brand {
+      display: inline-block; padding: .75rem 1.75rem; border-radius: 4px;
+      font-family: var(--font-head); font-weight: 700; font-size: .95rem;
+      letter-spacing: .03em; transition: background var(--transition), transform var(--transition);
+      color: var(--white);
+    }
+    .btn-brand--cacao  { background: var(--cacao-primary); }
+    .btn-brand--cacao:hover  { background: var(--cacao-dk);  transform: translateY(-2px); }
+    .btn-brand--coffee { background: var(--coffee-primary); }
+    .btn-brand--coffee:hover { background: var(--coffee-dk); transform: translateY(-2px); }
+
+    .values-strip {
+      background: var(--warm-brown); padding: 2.75rem 2rem;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; text-align: center;
+    }
+    .value-item        { color: var(--white); max-width: 160px; }
+    .value-item__icon  { font-size: 1.7rem; margin-bottom: .4rem; }
+    .value-item__label { font-size: .82rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; opacity: .9; }
+
+    .site-footer {
+      background: linear-gradient(90deg, var(--cacao-dk), var(--coffee-dk));
+      color: var(--white); text-align: center; padding: 1.5rem 1rem; font-size: .85rem;
+    }
+
+    .whatsapp-float {
+      position: fixed; bottom: 24px; right: 24px;
+      width: 60px; height: 60px; background: #25D366;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,.28); z-index: 9999;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 22px rgba(0,0,0,.38); }
   </style>
 </head>
 <body>
-  <header>
+
+  <header class="hero-header">
     <h1>Willkommen bei Meybol</h1>
+    <div class="hero-accent-bar"></div>
     <p>Handgemachte Schokolade &amp; Premium-Kaffee aus Peru</p>
   </header>
-  <main>
-    <div class="card">
-      <h2>Meybol Cacao</h2>
-      <p>Tree‑to‑Bar Schokolade aus seltenem peruanischen Urkakao.</p>
-      <a href="maybolcacao/index.html">Zur Cacao‑Seite →</a>
+
+  <div class="tagline-strip">
+    <span class="tag-cacao">&#127851; Tree-to-Bar Schokolade</span>
+    <span class="tag-coffee">&#9749; Single Origin Kaffee</span>
+  </div>
+
+  <main class="cards-section">
+    <div class="brand-card">
+      <div class="brand-card__header brand-card__header--cacao">
+        <div class="brand-card__icon">&#127851;</div>
+        <div class="brand-card__title">Meybol Cacao</div>
+      </div>
+      <div class="brand-card__body">
+        <p>Tree-to-Bar Schokolade aus seltenem peruanischen Urkakao. Mehrfach international ausgezeichnet.</p>
+        <div class="brand-card__tags">
+          <span class="pill pill--cacao">Tree-to-Bar</span>
+          <span class="pill pill--cacao">Chuncho-Kakao</span>
+          <span class="pill pill--cacao">Award Winner</span>
+        </div>
+        <a href="maybolcacao/index.html" class="btn-brand btn-brand--cacao">Zur Cacao-Seite &#8594;</a>
+      </div>
     </div>
-    <div class="card">
-      <h2>Meybol Coffee</h2>
-      <p>100 % Arabica Hochlandkaffee – nachhaltig und fair.</p>
-      <a href="maybolcoffe/index.html">Zur Coffee‑Seite →</a>
+
+    <div class="brand-card">
+      <div class="brand-card__header brand-card__header--coffee">
+        <div class="brand-card__icon">&#9749;</div>
+        <div class="brand-card__title">Meybol Coffee</div>
+      </div>
+      <div class="brand-card__body">
+        <p>100 % Arabica Hochlandkaffee &#8211; nachhaltig, fair und aus starken Frauenhaenden.</p>
+        <div class="brand-card__tags">
+          <span class="pill pill--coffee">Single Origin</span>
+          <span class="pill pill--coffee">100% Arabica</span>
+          <span class="pill pill--coffee">Fair Trade</span>
+        </div>
+        <a href="maybolcoffe/index.html" class="btn-brand btn-brand--coffee">Zur Coffee-Seite &#8594;</a>
+      </div>
     </div>
   </main>
+
+  <section class="values-strip">
+    <div class="value-item"><div class="value-item__icon">&#127807;</div><div class="value-item__label">Nachhaltig</div></div>
+    <div class="value-item"><div class="value-item__icon">&#129309;</div><div class="value-item__label">Fair Trade</div></div>
+    <div class="value-item"><div class="value-item__icon">&#127942;</div><div class="value-item__label">Ausgezeichnet</div></div>
+    <div class="value-item"><div class="value-item__icon">&#127477;&#127466;</div><div class="value-item__label">Aus Peru</div></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-social" style="margin-bottom:1rem;">
+      <a href="https://www.instagram.com/meybolcacao/" target="_blank" title="Instagram" style="margin:0 .5rem;color:inherit;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      </a>
+      <a href="https://www.facebook.com/MeybolCacao" target="_blank" title="Facebook" style="margin:0 .5rem;color:inherit;">
+        <svg width="10" height="18" viewBox="0 0 8 16" fill="currentColor"><path d="M6,3H4.538C4.077,3,4,3.252,4,3.889V5h2L5.761,8H4v8H2V8H0V5h2V3.077C2,1.055,3.064,0,4.461,0L6,0V3Z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@meybolcacao1" target="_blank" title="TikTok" style="margin:0 .5rem;color:inherit;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.44 0 9.92-4 9.99-9.44V12h-2v-.44C19.91 12.76 16.41 15 12 15c-1.66 0-3-1.34-3-3s1.34-3 3-3c1.12 0 2.08.6 2.6 1.46V8h2v4.18C16.71 12.07 14.53 10 12 10c-2.21 0-4 1.79-4 4s1.79 4 4 4c3.54 0 6.43-2.86 6.93-6.43H20V12C19.92 17.52 15.52 22 10 22 4.48 22 0 17.52 0 12S4.48 2 10 2h2z"/></svg>
+      </a>
+    </div>
+    &#169; 2025 Meybol Germany GmbH &middot; Handgemacht mit &#9829; aus Peru
+  </footer>
+
+  <a href="https://wa.me/4917620275594" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp kontaktieren">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30" fill="white">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.737 5.469 2.031 7.769L.063 31.25a1 1 0 0 0 1.219 1.219l7.481-1.968A15.937 15.937 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.406 22.875c-.344.969-2 1.875-2.75 1.969-.75.094-1.469.406-4.969-1.031-4.187-1.75-6.875-6.063-7.094-6.344-.219-.281-1.781-2.375-1.781-4.531 0-2.156 1.125-3.219 1.531-3.656.406-.438.875-.531 1.156-.531s.563.031.813.031c.281 0 .656-.094 1.031.781.375.875 1.25 3.031 1.375 3.25.125.219.188.469.031.75-.156.281-.25.469-.5.719-.25.25-.5.531-.719.719-.25.219-.5.469-.219.906.281.438 1.281 2.094 2.75 3.406 1.875 1.656 3.469 2.188 3.906 2.406.438.219.688.188.969-.094.281-.281 1.156-1.344 1.469-1.813.313-.469.625-.375 1.063-.219.438.156 2.781 1.313 3.25 1.563.469.25.781.375.875.563.094.219.094 1.188-.25 2.156z"/>
+    </svg>
+  </a>
+
 </body>
 </html>

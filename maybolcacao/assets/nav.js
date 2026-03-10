@@ -63,6 +63,9 @@
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
           </svg>
         </a>
+        <a href="https://www.tiktok.com/@meybolcacao1" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok" style="margin-left:8px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.44 0 9.92-4 9.99-9.44V12h-2v-.44C19.91 12.76 16.41 15 12 15c-1.66 0-3-1.34-3-3s1.34-3 3-3c1.12 0 2.08.6 2.6 1.46V8h2v4.18C16.71 12.07 14.53 10 12 10c-2.21 0-4 1.79-4 4s1.79 4 4 4c3.54 0 6.43-2.86 6.93-6.43H20V12C19.92 17.52 15.52 22 10 22 4.48 22 0 17.52 0 12S4.48 2 10 2h2z"/></svg>
+        </a>
         <button class="nav__hamburger" id="nav-hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-menu">
           <span></span><span></span><span></span>
         </button>

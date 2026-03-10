@@ -8,10 +8,32 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<!-- AI assistant widget placeholder (from research project) -->
+<button id="ai-toggle-btn" aria-label="Abrir asistente AI" style="position: fixed; bottom: 100px; right: 90px; width: 56px; height: 56px; border-radius: 50%; background: #002156; color: #fff; border: none; box-shadow: 0 4px 16px rgba(0,0,0,0.18); z-index: 10000; display: flex; align-items: center; justify-content: center; font-size: 28px; cursor: pointer; transition: background 0.2s;"><span id="ai-toggle-icon" style="display: block;">🤖</span></button>
+<div id="ai-chatbot-widget" style="position: fixed; bottom: 100px; right: 24px; width: 340px; max-width: 90vw; z-index: 9999; font-family: var(--font-body); box-shadow: 0 4px 24px rgba(0,0,0,0.18); border-radius: 16px 16px 8px 8px; background: #fff; display: none; flex-direction: column;">
+  <div style="background: #002156; color: #fff; padding: 12px 16px; border-radius: 16px 16px 0 0; display: flex; align-items: center; justify-content: space-between;">
+    <span style="font-weight: 600;">Asistente AI</span>
+    <button style="background: none; border: none; color: #fff; font-size: 18px; cursor: pointer;" onclick="document.getElementById('ai-chatbot-widget').style.display='none'">×</button>
+  </div>
+  <div style="flex: 1; padding: 16px; overflow-y: auto; min-height: 120px; max-height: 260px; background: #f7f7f7;">
+    <div style="margin-bottom: 12px;"><div style="background: #e6eaf3; color: #222; padding: 10px 14px; border-radius: 12px 12px 12px 4px; max-width: 80%; margin-bottom: 4px; font-size: 15px;">¡Hola! Soy tu asistente AI. ¿En qué puedo ayudarte hoy?</div></div>
+  </div>
+  <form style="display: flex; border-top: 1px solid #eee; background: #fff;" onsubmit="return false;">
+    <input type="text" placeholder="Escribe tu mensaje..." style="flex: 1; border: none; padding: 12px; font-size: 15px; outline: none; border-radius: 0 0 0 8px;" disabled>
+    <button type="submit" style="background: #002156; color: #fff; border: none; padding: 0 18px; font-size: 16px; border-radius: 0 0 8px 0; cursor: not-allowed;" disabled>Enviar</button>
+  </form>
+  <div style="font-size: 11px; color: #888; text-align: right; padding: 4px 10px 6px 0;">Demo UI - Sin funcionalidad</div>
+</div>
+<script>
+  document.getElementById('ai-toggle-btn').addEventListener('click', function() {
+    var widget = document.getElementById('ai-chatbot-widget');
+    widget.style.display = widget.style.display === 'flex' ? 'none' : 'flex';
+  });
+</script>
 <script src="assets/nav.js"></script>
 
 <!-- HERO -->
-<section class="hero" style="min-height:90vh;">
+<section class="hero animate-fadeUp" style="min-height:90vh;">
   <img class="hero__img"
     src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;0;0,width=1920,height=1250/image/325755915/3e76d6ad-cfab-4bc1-aefe-519c378dd38e.jpg"
     alt="Meybol Cacao – Handgemachte Schokolade aus Peru"
@@ -51,6 +73,30 @@
         <div class="feature-card__icon">🫘</div>
         <div class="feature-card__title">Seltener Urkakao</div>
         <p>100% Chuncho-Kakao – eine der ältesten Kakaosorten Perus mit einzigartigem Aromaprofil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISES SECTION -->
+<section class="section-pad bg-light promises animate-fadeUp">
+  <div class="container">
+    <h2 class="section-title text-center">Unsere Versprechen</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">✅</div>
+        <div class="feature-card__title">100 % Zufriedenheitsgarantie</div>
+        <p>Falls unsere Schokolade nicht begeistert, erstatten wir oder tauschen um.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">🚚</div>
+        <div class="feature-card__title">Schneller Versand</div>
+        <p>Weltweiter Versand &amp; keine Schmelz-Garantie bei Ankunft.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">🌱</div>
+        <div class="feature-card__title">Regenwaldschutz</div>
+        <p>Ein Teil jeder Bestellung fließt in Aufforstungsprojekte.</p>
       </div>
     </div>
   </div>
@@ -195,5 +241,13 @@
 </section>
 
 <script src="assets/footer.js"></script>
+
+<!-- WHATSAPP FLOAT BUTTON -->
+<a href="https://wa.me/4917620275594" style="position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.28);z-index:9999;transition:transform .2s,box-shadow .2s;" target="_blank" rel="noopener" aria-label="WhatsApp kontaktieren" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30" fill="white">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.737 5.469 2.031 7.769L.063 31.25a1 1 0 0 0 1.219 1.219l7.481-1.968A15.937 15.937 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.406 22.875c-.344.969-2 1.875-2.75 1.969-.75.094-1.469.406-4.969-1.031-4.187-1.75-6.875-6.063-7.094-6.344-.219-.281-1.781-2.375-1.781-4.531 0-2.156 1.125-3.219 1.531-3.656.406-.438.875-.531 1.156-.531s.563.031.813.031c.281 0 .656-.094 1.031.781.375.875 1.25 3.031 1.375 3.25.125.219.188.469.031.75-.156.281-.25.469-.5.719-.25.25-.5.531-.719.719-.25.219-.5.469-.219.906.281.438 1.281 2.094 2.75 3.406 1.875 1.656 3.469 2.188 3.906 2.406.438.219.688.188.969-.094.281-.281 1.156-1.344 1.469-1.813.313-.469.625-.375 1.063-.219.438.156 2.781 1.313 3.25 1.563.469.25.781.375.875.563.094.219.094 1.188-.25 2.156z"/>
+  </svg>
+</a>
+
 </body>
 </html>

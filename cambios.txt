@@ -1,0 +1,40 @@
+﻿---
+# Registro de enlaces y notas (10 mar 2026)
+
+## Enlaces compartidos por contacto 
+
+- Nuestro TikTok: https://www.tiktok.com/@meybolcacao1 se tiene que agregar a las paginas web.
+
+
+COMPETENCIA:
+
+- Linktree: https://linktr.ee/theconsciousbar
+- Instagram crafting_markets: https://www.instagram.com/crafting_markets
+- Perupuro (chocolates): https://perupuro.de/schokolade/
+- Cacaosuyo: https://cacaosuyo.pe/
+- Taucherli Shop: https://taucherli.com/shop/
+- LinkedIn Meybol Cacao Germany: https://www.linkedin.com/company/meybol-cacao-germany/
+- Original Beans: https://originalbeans.com/
+- To'ak Chocolate: https://toakchocolate.com/
+
+## Enlaces internos del proyecto
+
+- Mayaol cacao: https://maybol.onrender.com/maybolcacao/index.html
+- Mayaol coffee: https://maybol.onrender.com/maybolcoffe/index.html
+- Landing principal: https://maybol.onrender.com/
+
+
+## Solicitudes y tareas pendientes
+
+- **Investigación aplicada a diseño:** se añadieron secciones de Promesas, animaciones, paleta dorada en Coffee, íconos sociales TikTok, newsletter, y placeholder de IA.
+- **Ajustado footer y nav** con nuevos enlaces sociales.
+- **Páginas principales** ahora usan animaciones CSS y colores más ricos.
+
+- **Colores dorados** para la sección "Coffe" (Coffee). Añadir paleta más rica.
+- **Animaciones y estilos modernos** en todas las páginas web.
+- **Integrar IA** (como en: `comercio_negocios_latam_sac` proyecto de la carpeta correspondiente) en cada página.
+  - Ruta ejemplo: C:\Users\Usuario\Desktop\Julian\Workspace\incan\comercio_negocios_latam_sac
+- **Analizar diseños modernos** y animaciones CSS atractivas de la competencia.
+- **Identificar secciones** que puedan actualizarse o agregarse comparando con competidores.
+
+---
