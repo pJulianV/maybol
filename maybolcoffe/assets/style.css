@@ -9,6 +9,7 @@
 :root {
   --primary:    #b79770;
   --primary-dk: #9a7d5a;
+  --gold:       #d4af37;
   --dark:       #737373;
   --darker:     #4a4a4a;
   --light-bg:   #faf8f6;
@@ -21,6 +22,15 @@
   --shadow:     0 4px 20px rgba(0,0,0,.10);
   --transition: .25s ease;
 }
+
+/* Gold-style utilities */
+.gold-gradient {
+  background: linear-gradient(135deg, rgba(212,175,55,0.9) 0%, rgba(183,151,112,0.8) 40%, rgba(183,151,112,0.5) 100%);
+}
+.gold-border {
+  border-color: rgba(212,175,55,0.9);
+}
+
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -335,7 +345,7 @@ p  { margin-bottom: .9em; }
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,.55) 0%, rgba(212,175,55,.3) 45%, rgba(0,0,0,.25) 100%);
+  background: linear-gradient(135deg, rgba(0,0,0,.55) 0%, rgba(212,175,55,.45) 40%, rgba(0,0,0,.25) 100%);
 }
 .hero__overlay::after {
   content: '';
@@ -426,9 +436,10 @@ p  { margin-bottom: .9em; }
 .divider {
   width: 60px;
   height: 3px;
-  background: var(--primary);
+  background: linear-gradient(90deg, var(--gold), var(--primary));
   margin: 1rem auto 2rem;
   border-radius: 2px;
+  box-shadow: 0 0 18px rgba(212,175,55,.35);
 }
 
 /* Alternating background sections */
@@ -722,7 +733,7 @@ p  { margin-bottom: .9em; }
    MISC — CTA Banner
 ════════════════════════════════════════════════════════ */
 .cta-banner {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dk) 100%);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--primary) 55%, var(--primary-dk) 100%);
   color: var(--white);
   text-align: center;
   padding: 4rem 2rem;

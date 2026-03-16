@@ -22,13 +22,84 @@
     <input type="text" placeholder="Escribe tu mensaje..." style="flex: 1; border: none; padding: 12px; font-size: 15px; outline: none; border-radius: 0 0 0 8px;" disabled>
     <button type="submit" style="background: #002156; color: #fff; border: none; padding: 0 18px; font-size: 16px; border-radius: 0 0 8px 0; cursor: not-allowed;" disabled>Enviar</button>
   </form>
-  <div style="font-size: 11px; color: #888; text-align: right; padding: 4px 10px 6px 0;">Demo UI - Sin funcionalidad</div>
+  <div style="font-size: 11px; color: #888; text-align: right; padding: 4px 10px 6px 0;">Funcional si el backend está activo (POST /api/ai-chat)</div>
 </div>
 <script>
-  document.getElementById('ai-toggle-btn').addEventListener('click', function() {
-    var widget = document.getElementById('ai-chatbot-widget');
-    widget.style.display = widget.style.display === 'flex' ? 'none' : 'flex';
+  const aiBtn = document.getElementById('ai-toggle-btn');
+  const aiWidget = document.getElementById('ai-chatbot-widget');
+  const aiIcon = document.getElementById('ai-toggle-icon');
+  const aiInput = aiWidget.querySelector('input[type="text"]');
+  const aiSend = aiWidget.querySelector('button[type="submit"]');
+  const aiChatArea = aiWidget.querySelector('div[style*="overflow-y: auto"]');
+
+  // Estado inicial: widget oculto
+  aiWidget.style.display = 'none';
+  aiInput.disabled = true;
+  aiSend.disabled = true;
+  aiSend.style.cursor = 'not-allowed';
+
+  let aiOpen = false;
+  function appendMessage(content, sender = 'user') {
+    const msgDiv = document.createElement('div');
+    msgDiv.style.marginBottom = '12px';
+    msgDiv.innerHTML = `<div style="background: ${sender === 'user' ? '#dbeafe' : '#e6eaf3'}; color: #222; padding: 10px 14px; border-radius: 12px 12px 12px 4px; max-width: 80%; margin-bottom: 4px; font-size: 15px; float: ${sender === 'user' ? 'right' : 'left'}; clear: both;">${content}</div>`;
+    aiChatArea.appendChild(msgDiv);
+    aiChatArea.scrollTop = aiChatArea.scrollHeight;
+  }
+
+  aiBtn.addEventListener('click', function() {
+    aiOpen = !aiOpen;
+    if (aiOpen) {
+      aiWidget.style.display = 'flex';
+      aiInput.disabled = false;
+      aiSend.disabled = false;
+      aiSend.style.cursor = 'pointer';
+      aiIcon.textContent = '✖';
+      aiBtn.setAttribute('aria-label', 'Minimizar asistente AI');
+      aiInput.focus();
+    } else {
+      aiWidget.style.display = 'none';
+      aiInput.disabled = true;
+      aiSend.disabled = true;
+      aiSend.style.cursor = 'not-allowed';
+      aiIcon.textContent = '🤖';
+      aiBtn.setAttribute('aria-label', 'Abrir asistente AI');
+    }
   });
+
+  aiWidget.querySelector('form').onsubmit = async function(e) {
+    e.preventDefault();
+    const prompt = aiInput.value.trim();
+    if (!prompt) return;
+    appendMessage(prompt, 'user');
+    aiInput.value = '';
+    aiInput.disabled = true;
+    aiSend.disabled = true;
+    aiSend.style.cursor = 'not-allowed';
+
+    try {
+      const res = await fetch('/api/ai-chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt })
+      });
+      const data = await res.json();
+      let aiText = 'Error en la respuesta AI';
+      if (res.ok && data && data.result) {
+        aiText = data.result;
+      } else if (data && data.error) {
+        aiText = `Error AI: ${data.error}`;
+      }
+      appendMessage(aiText, 'ai');
+    } catch (err) {
+      appendMessage('No se pudo conectar con el asistente AI.', 'ai');
+    }
+
+    aiInput.disabled = false;
+    aiSend.disabled = false;
+    aiSend.style.cursor = 'pointer';
+    aiInput.focus();
+  };
 </script>
 <script src="assets/nav.js"></script>
 
@@ -178,6 +249,35 @@
           <div class="product-card__price">21,00 €</div>
           <a href="shop.html" class="product-card__link">Zum Shop →</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS SECTION -->
+<section class="section-pad bg-cream animate-fadeUp">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Auszeichnungen</span>
+      <h2 class="section-title">Prämiert &amp; anerkannt</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Unsere Röstungen wurden mehrfach für Geschmack, Nachhaltigkeit und Handwerkskunst ausgezeichnet.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">🏆</div>
+        <div class="feature-card__title">International Coffee Awards</div>
+        <p>Gold für Nachhaltigkeit &amp; Qualität – ein Zeichen unserer Sorgfalt vom Anbau bis zur Röstung.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">🌿</div>
+        <div class="feature-card__title">Nachhaltigkeits-Siegel</div>
+        <p>Geprüfte Wertschöpfungskette und faire Preise für die Bäuerinnen der Region.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">✨</div>
+        <div class="feature-card__title">Kundenliebling 2025</div>
+        <p>Top-Bewertungen in der Community für Geschmack, Transparenz und Packaging.</p>
       </div>
     </div>
   </div>
