@@ -24,6 +24,7 @@
   </form>
   <div style="font-size: 11px; color: #888; text-align: right; padding: 4px 10px 6px 0;">Funcional si el backend está activo (POST /api/ai-chat)</div>
 </div>
+<script src="../ai-config.js"></script>
 <script>
   const aiBtn = document.getElementById('ai-toggle-btn');
   const aiWidget = document.getElementById('ai-chatbot-widget');
@@ -78,10 +79,10 @@
     aiSend.style.cursor = 'not-allowed';
 
     try {
-      const res = await fetch('/api/ai-chat', {
+      const res = await fetch(window.maybolAIConfig.apiEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt })
+        body: JSON.stringify({ prompt, brand: window.maybolAIConfig.brand })
       });
       const data = await res.json();
       let aiText = 'Error en la respuesta AI';
