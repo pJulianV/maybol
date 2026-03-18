@@ -1,23 +1,21 @@
 // Simple Node.js + Express server for Maybol.
-// This allows /api/ai-chat to work on platforms like Render or Heroku.
+// This allows the static site to be served on platforms like Render or Heroku.
 
 const express = require('express');
 const path = require('path');
-
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// API endpoints
-app.post('/api/ai-chat', aiChatHandler);
+// Health check
 app.get('/api/health', (req, res) => res.json({ status: 'ok', ts: new Date().toISOString() }));
 
 // Serve static site files
 app.use(express.static(path.join(__dirname, '/')));
 
-// Fallback to index.html for any non-API route (useful for SPA-like navigation)
+// Fallback to index.html for any non-API route
 app.get('*', (req, res) => {
   if (req.path.startsWith('/api/')) {
     return res.status(404).json({ error: 'API route not found' });
@@ -27,5 +25,4 @@ app.get('*', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`🚀 Maybol server listening on port ${PORT}`);
-  console.log(`🌐 AI endpoint: http://localhost:${PORT}/api/ai-chat`);
 });
