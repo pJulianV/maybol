@@ -93,7 +93,8 @@
       }
       appendMessage(aiText, 'ai');
     } catch (err) {
-      appendMessage('No se pudo conectar con el asistente AI.', 'ai');
+      const msg = err?.message ? `No se pudo conectar con el asistente AI. (${err.message})` : 'No se pudo conectar con el asistente AI.';
+      appendMessage(msg, 'ai');
     }
 
     aiInput.disabled = false;
