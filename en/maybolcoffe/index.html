@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meybol Coffee – Premium-Hochlandkaffee aus Peru</title>
-  <meta name="description" content="Meybol Coffee – Premium 100% Arabica Hochlandkaffee aus Peru. Nachhaltig, fair und aus starken Frauenhänden.">
+  <title>Meybol Coffee – Premium highland coffee from Peru</title>
+  <meta name="description" content="Meybol Coffee – Premium 100% Arabica highland coffee from Peru. Sustainable, fair, and produced by strong women.">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
     <button style="background: none; border: none; color: #fff; font-size: 18px; cursor: pointer;" onclick="document.getElementById('ai-chatbot-widget').style.display='none'">×</button>
   </div>
   <div style="flex: 1; padding: 16px; overflow-y: auto; min-height: 120px; max-height: 260px; background: #f7f7f7;">
-    <div style="margin-bottom: 12px;"><div style="background: #e6eaf3; color: #222; padding: 10px 14px; border-radius: 12px 12px 12px 4px; max-width: 80%; margin-bottom: 4px; font-size: 15px;">¡Hola! Soy tu asistente AI. ¿En qué puedo ayudarte hoy?</div></div>
+    <div style="margin-bottom: 12px;"><div style="background: #e6eaf3; color: #222; padding: 10px 14px; border-radius: 12px 12px 12px 4px; max-width: 80%; margin-bottom: 4px; font-size: 15px;">Hi! I'm your AI assistant. How can I help you today?</div></div>
   </div>
   <form style="display: flex; border-top: 1px solid #eee; background: #fff;" onsubmit="return false;">
     <input type="text" placeholder="Escribe tu mensaje..." style="flex: 1; border: none; padding: 12px; font-size: 15px; outline: none; border-radius: 0 0 0 8px;" disabled>
@@ -93,7 +93,7 @@
       }
       appendMessage(aiText, 'ai');
     } catch (err) {
-      appendMessage('No se pudo conectar con el asistente AI.', 'ai');
+      appendMessage('Could not connect to the AI assistant. Please verify the backend is running.', 'ai');
     }
 
     aiInput.disabled = false;
@@ -110,13 +110,13 @@
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <p class="hero__subtitle">Single Origin · 100% Arabica · Peru</p>
-    <h1 class="hero__title">Kaffeegenuss mit<br>reinem Gewissen.</h1>
-    <p class="hero__lead">Premium-Hochlandkaffee aus starken Frauenhänden – nachhaltig, fair und einzigartig im Geschmack.</p>
-    <a href="shop.html" class="btn btn-primary">Jetzt entdecken</a>
+    <h1 class="hero__title">Coffee enjoyment with a clear conscience.</h1>
+    <p class="hero__lead">Premium highland coffee from strong women's hands – sustainable, fair and unique in flavor.</p>
+    <a href="shop.html" class="btn btn-primary">Discover now</a>
     &ensp;
-    <a href="uber-uns.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.7);color:#fff;">Unsere Geschichte</a>
+    <a href="uber-uns.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.7);color:#fff;">Our story</a>
   </div>
-  <div class="hero__scroll">scrollen</div>
+  <div class="hero__scroll">scroll</div>
 </section>
 
 <!-- FEATURES STRIP -->
@@ -124,11 +124,11 @@
 <!-- NEWSLETTER SIGNUP -->
 <section class="section-pad bg-secondary animate-fadeUp" style="background:var(--light-gray);">
   <div class="container text-center">
-    <h2 class="section-title">Bleib auf dem Laufenden</h2>
-    <p>Abonniere unseren Newsletter für exklusive Röstungen und Angebote.</p>
+    <h2 class="section-title">Stay up to date</h2>
+    <p>Subscribe to our newsletter for exclusive roasts and offers.</p>
     <form action="#" method="post" style="max-width:400px;margin:0 auto;" class="animate-fadeUp">
-      <input type="email" name="email" placeholder="Deine E-Mail" required style="padding:.75rem 1rem;width:100%;border:1px solid #ccc;border-radius:4px;">
-      <button type="submit" class="btn btn-primary" style="margin-top:1rem;">Anmelden</button>
+      <input type="email" name="email" placeholder="Your email" required style="padding:.75rem 1rem;width:100%;border:1px solid #ccc;border-radius:4px;">
+      <button type="submit" class="btn btn-primary" style="margin-top:1rem;">Subscribe</button>
     </form>
   </div>
 </section>
@@ -164,22 +164,22 @@
 <!-- PROMISES SECTION -->
 <section class="section-pad bg-light promises animate-fadeUp">
   <div class="container">
-    <h2 class="section-title text-center">Unsere Versprechen</h2>
+    <h2 class="section-title text-center">Our promises</h2>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-card__icon">✅</div>
-        <div class="feature-card__title">100 % Zufriedenheitsgarantie</div>
-        <p>Unsere Bohnen sind von höchster Qualität – oder zurück!</p>
+        <div class="feature-card__title">100% satisfaction guarantee</div>
+        <p>Our beans are premium quality — or your money back.</p>
       </div>
       <div class="feature-card">
         <div class="feature-card__icon">⚡</div>
-        <div class="feature-card__title">Schnelle Lieferung</div>
-        <p>Frisch geröstet, schnell verpackt und versandt – weltweit.</p>
+        <div class="feature-card__title">Fast delivery</div>
+        <p>Fresh roasted, quickly packed and shipped worldwide.</p>
       </div>
       <div class="feature-card">
         <div class="feature-card__icon">🌿</div>
-        <div class="feature-card__title">Frauen stärken</div>
-        <p>Ein Teil des Erlöses unterstützt peruanische Frauenkooperativen.</p>
+        <div class="feature-card__title">Empowering women</div>
+        <p>Part of the proceeds supports Peruvian women cooperatives.</p>
       </div>
     </div>
   </div>
@@ -208,8 +208,8 @@
 <section class="section-pad bg-light">
   <div class="container">
     <div class="text-center">
-      <span class="section-label">Unsere Kaffeesorten</span>
-      <h2 class="section-title">Entdecke unsere ersten Kaffeesorten</h2>
+      <span class="section-label">Our coffees</span>
+      <h2 class="section-title">Discover our first coffee varieties</h2>
       <div class="divider"></div>
     </div>
     <div class="products-grid">

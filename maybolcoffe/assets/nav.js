@@ -1,35 +1,77 @@
 // Meybol Coffee – shared nav, back-to-top & mobile menu
 (function () {
 
+  /* ── Language helpers ───────────────────────────────── */
+  var lang = document.documentElement.lang || 'de';
+  var labels = {
+    de: {
+      home: 'Home',
+      shop: 'Shop',
+      about: 'Über uns',
+      press: 'Presse & Kooperation',
+      contact: 'Kontakt',
+      cart: 'Warenkorb',
+      navAria: 'Hauptnavigation',
+      logoAria: 'Meybol Coffee – Startseite',
+      cartAria: 'Warenkorb',
+      menuOpen: 'Menü öffnen'
+    },
+    en: {
+      home: 'Home',
+      shop: 'Shop',
+      about: 'About',
+      press: 'Press & Partnerships',
+      contact: 'Contact',
+      cart: 'Cart',
+      navAria: 'Main navigation',
+      logoAria: 'Meybol Coffee – Home',
+      cartAria: 'Cart',
+      menuOpen: 'Open menu'
+    },
+    es: {
+      home: 'Inicio',
+      shop: 'Tienda',
+      about: 'Sobre nosotros',
+      press: 'Prensa y colaboraciones',
+      contact: 'Contacto',
+      cart: 'Carrito',
+      navAria: 'Navegación principal',
+      logoAria: 'Meybol Coffee – Inicio',
+      cartAria: 'Carrito',
+      menuOpen: 'Abrir menú'
+    }
+  };
+  var t = labels[lang] || labels.de;
+
   /* ── Build nav HTML ─────────────────────────────────── */
   var navHTML = `
-  <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <nav class="nav" role="navigation" aria-label="${t.navAria}">
     <div class="nav__inner">
 
-      <a class="nav__logo" href="index.html" aria-label="Meybol Coffee – Startseite">
+      <a class="nav__logo" href="index.html" aria-label="${t.logoAria}">
         MEYBOL COFFEE
       </a>
 
       <ul class="nav__menu" id="nav-menu" role="menubar">
 
         <li class="nav__item" role="none">
-          <a class="nav__link" href="index.html" role="menuitem">Home</a>
+          <a class="nav__link" href="index.html" role="menuitem">${t.home}</a>
         </li>
 
         <li class="nav__item" role="none">
-          <a class="nav__link" href="shop.html" role="menuitem">Shop</a>
+          <a class="nav__link" href="shop.html" role="menuitem">${t.shop}</a>
         </li>
 
         <li class="nav__item" role="none">
-          <a class="nav__link" href="uber-uns.html" role="menuitem">Über uns</a>
+          <a class="nav__link" href="uber-uns.html" role="menuitem">${t.about}</a>
         </li>
 
         <li class="nav__item" role="none">
-          <a class="nav__link" href="presse-kooperation.html" role="menuitem">Presse &amp; Kooperation</a>
+          <a class="nav__link" href="presse-kooperation.html" role="menuitem">${t.press}</a>
         </li>
 
         <li class="nav__item" role="none">
-          <a class="nav__link" href="kontakt.html" role="menuitem">Kontakt</a>
+          <a class="nav__link" href="kontakt.html" role="menuitem">${t.contact}</a>
         </li>
 
       </ul><!-- /nav__menu -->
@@ -53,14 +95,14 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.44 0 9.92-4 9.99-9.44V12h-2v-.44C19.91 12.76 16.41 15 12 15c-1.66 0-3-1.34-3-3s1.34-3 3-3c1.12 0 2.08.6 2.6 1.46V8h2v4.18C16.71 12.07 14.53 10 12 10c-2.21 0-4 1.79-4 4s1.79 4 4 4c3.54 0 6.43-2.86 6.93-6.43H20V12C19.92 17.52 15.52 22 10 22 4.48 22 0 17.52 0 12S4.48 2 10 2h2z"/></svg>
           </a>
         </div>
-        <a class="nav__cart" href="shop.html" title="Warenkorb" aria-label="Warenkorb">
+        <a class="nav__cart" href="shop.html" title="${t.cart}" aria-label="${t.cartAria}">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
           </svg>
           <span class="nav__cart-badge" id="cart-badge">0</span>
         </a>
-        <button class="nav__hamburger" id="nav-hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-menu">
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="${t.menuOpen}" aria-expanded="false" aria-controls="nav-menu">
           <span></span><span></span><span></span>
         </button>
       </div>

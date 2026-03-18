@@ -1,0 +1,16 @@
+# Render service configuration (optional)
+# Deploy this repository as a Node web service so /api/ai-chat works.
+# If you already configure the service via the Render dashboard, you can ignore this file.
+
+services:
+  - type: web
+    name: maybol
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: HF_TOKEN
+      - key: HF_API_URL
+      - key: HF_MODEL
+      - key: ALLOWED_ORIGINS
