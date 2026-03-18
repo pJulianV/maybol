@@ -1,4 +1,7 @@
 // Endpoint /api/ai-chat — Hugging Face Inference API
+// Variables requeridas en Render:
+//   HF_TOKEN → token tipo "Read" de huggingface.co/settings/tokens
+//   HF_MODEL → mistralai/Mistral-7B-Instruct-v0.3
 
 const SYSTEM_PROMPT =
   'Eres el asistente virtual oficial de Meybol (todas sus marcas). ' +
@@ -19,12 +22,13 @@ module.exports = async function aiChatHandler(req, res) {
     }
 
     const HF_TOKEN = process.env.HF_TOKEN;
-    const HF_MODEL = process.env.HF_MODEL || 'HuggingFaceH4/zephyr-7b-beta';
+    const HF_MODEL = process.env.HF_MODEL || 'mistralai/Mistral-7B-Instruct-v0.3';
 
     if (!HF_TOKEN) {
-      return res.status(500).json({ error: 'HF_TOKEN no configurado en el servidor.' });
+      return res.status(500).json({ error: 'HF_TOKEN no configurado.' });
     }
 
+    // Construir mensajes en formato chat
     const messages = [{ role: 'system', content: SYSTEM_PROMPT }];
 
     if (Array.isArray(history)) {
@@ -34,15 +38,15 @@ module.exports = async function aiChatHandler(req, res) {
         }
       }
     }
-
     messages.push({ role: 'user', content: userMessage });
 
+    // Llamada al router de HF (OpenAI-compatible)
     const hfRes = await fetch(
       `https://router.huggingface.co/hf-inference/models/${HF_MODEL}/v1/chat/completions`,
       {
         method: 'POST',
         headers: {
-          Authorization: `Bearer ${HF_TOKEN}`,
+          'Authorization': `Bearer ${HF_TOKEN}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
@@ -50,22 +54,37 @@ module.exports = async function aiChatHandler(req, res) {
           messages,
           max_tokens: 300,
           temperature: 0.7,
+          stream: false,
         }),
       }
     );
 
+    const rawText = await hfRes.text();
+
     if (!hfRes.ok) {
-      const errText = await hfRes.text();
-      console.error('HF error:', errText);
-      return res.status(502).json({ error: 'Error al contactar Hugging Face.', detail: errText });
+      console.error('HF error status:', hfRes.status, rawText);
+      return res.status(502).json({
+        error: 'Error al contactar Hugging Face.',
+        status: hfRes.status,
+        detail: rawText,
+      });
     }
 
-    const data = await hfRes.json();
-    const reply = data?.choices?.[0]?.message?.content || 'Lo siento, no pude generar una respuesta.';
+    let data;
+    try {
+      data = JSON.parse(rawText);
+    } catch {
+      return res.status(502).json({ error: 'Respuesta inválida de HF.', detail: rawText });
+    }
+
+    const reply =
+      data?.choices?.[0]?.message?.content ||
+      'Lo siento, no pude generar una respuesta.';
 
     return res.json({ reply: reply.trim() });
+
   } catch (err) {
     console.error('ai-chat error:', err);
-    return res.status(500).json({ error: 'Error interno del servidor.' });
+    return res.status(500).json({ error: 'Error interno del servidor.', detail: err.message });
   }
 };
