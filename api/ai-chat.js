@@ -1,17 +1,13 @@
 // Endpoint /api/ai-chat — Hugging Face Inference API
-// Variables de entorno requeridas en Render:
-//   HF_TOKEN   → tu token de Hugging Face
-//   HF_MODEL   → e.g. meta-llama/Llama-2-7b-chat-hf
 
 const SYSTEM_PROMPT =
   'Eres el asistente virtual oficial de Meybol (todas sus marcas). ' +
   'Responde únicamente con información breve, concreta y real sobre los productos ' +
   '(café, chocolate y derivados), la tienda, envíos, pagos y contactos. ' +
   'No inventes datos ni respondas sobre temas externos. ' +
-  'Si no tienes información, responde con honestidad y ofrece ayuda con información ' +
-  'sobre productos, pedidos o contacto. ' +
-  'Mantén un tono profesional y directo. Sé breve y no agregues información innecesaria. ' +
-  'Información de contacto oficial: email: info@meybol.com, teléfono: +51 969 406 930.';
+  'Si no tienes información, responde con honestidad y ofrece ayuda. ' +
+  'Mantén un tono profesional y directo. Sé breve. ' +
+  'Contacto oficial: email: info@meybol.com, teléfono: +51 969 406 930.';
 
 module.exports = async function aiChatHandler(req, res) {
   try {
@@ -23,27 +19,26 @@ module.exports = async function aiChatHandler(req, res) {
     }
 
     const HF_TOKEN = process.env.HF_TOKEN;
-    const HF_MODEL = process.env.HF_MODEL || 'meta-llama/Llama-2-7b-chat-hf';
+    const HF_MODEL = process.env.HF_MODEL || 'mistralai/Mistral-7B-Instruct-v0.3';
 
     if (!HF_TOKEN) {
       return res.status(500).json({ error: 'HF_TOKEN no configurado en el servidor.' });
     }
 
-    // Construir prompt formato Llama-2 chat
-    let llmPrompt = `<s>[INST] <<SYS>>\n${SYSTEM_PROMPT}\n<</SYS>>\n\n`;
+    const messages = [{ role: 'system', content: SYSTEM_PROMPT }];
 
-    // Agregar historial previo si existe
     if (Array.isArray(history)) {
       for (const turn of history) {
-        if (turn.role === 'user') llmPrompt += `${turn.content} [/INST] `;
-        else if (turn.role === 'assistant') llmPrompt += `${turn.content} </s><s>[INST] `;
+        if (turn.role === 'user' || turn.role === 'assistant') {
+          messages.push({ role: turn.role, content: turn.content });
+        }
       }
     }
 
-    llmPrompt += `${userMessage} [/INST]`;
+    messages.push({ role: 'user', content: userMessage });
 
     const hfRes = await fetch(
-      `https://router.huggingface.co/hf-inference/models/${HF_MODEL}`,
+      `https://router.huggingface.co/hf-inference/models/${HF_MODEL}/v1/chat/completions`,
       {
         method: 'POST',
         headers: {
@@ -51,14 +46,10 @@ module.exports = async function aiChatHandler(req, res) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          inputs: llmPrompt,
-          parameters: {
-            max_new_tokens: 300,
-            temperature: 0.7,
-            top_p: 0.9,
-            do_sample: true,
-            return_full_text: false,
-          },
+          model: HF_MODEL,
+          messages,
+          max_tokens: 300,
+          temperature: 0.7,
         }),
       }
     );
@@ -70,12 +61,7 @@ module.exports = async function aiChatHandler(req, res) {
     }
 
     const data = await hfRes.json();
-
-    // HF devuelve array con generated_text
-    const reply =
-      (Array.isArray(data) && data[0]?.generated_text) ||
-      data?.generated_text ||
-      'Lo siento, no pude generar una respuesta.';
+    const reply = data?.choices?.[0]?.message?.content || 'Lo siento, no pude generar una respuesta.';
 
     return res.json({ reply: reply.trim() });
   } catch (err) {
