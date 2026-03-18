@@ -12,6 +12,7 @@ app.use(express.json());
 
 // API endpoints
 app.post('/api/ai-chat', aiChatHandler);
+app.get('/api/health', (req, res) => res.json({ status: 'ok', ts: new Date().toISOString() }));
 
 // Serve static site files
 app.use(express.static(path.join(__dirname, '/')));

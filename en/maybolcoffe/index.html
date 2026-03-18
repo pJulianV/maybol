@@ -84,16 +84,30 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt, brand: window.maybolAIConfig.brand })
       });
-      const data = await res.json();
+
+      const raw = await res.text();
+      let data;
+      try { data = JSON.parse(raw); } catch { data = null; }
+
       let aiText = 'Error en la respuesta AI';
-      if (res.ok && data && data.result) {
-        aiText = data.result;
-      } else if (data && data.error) {
-        aiText = `Error AI: ${data.error}`;
+      if (res.ok) {
+        if (data && data.result) {
+          aiText = data.result;
+        } else if (data && data.error) {
+          aiText = `Error AI: ${data.error}`;
+        } else if (raw.trim()) {
+          aiText = `Response not JSON (status ${res.status}): ${raw}`;
+        } else {
+          aiText = `Empty response from server (status ${res.status})`;
+        }
+      } else {
+        aiText = `HTTP error ${res.status}: ${raw || '(no body)'}`;
       }
+
       appendMessage(aiText, 'ai');
     } catch (err) {
-      appendMessage('Could not connect to the AI assistant. Please verify the backend is running.', 'ai');
+      const msg = err?.message ? `Could not connect to the AI assistant. (${err.message})` : 'Could not connect to the AI assistant.';
+      appendMessage(msg, 'ai');
     }
 
     aiInput.disabled = false;
