@@ -36,7 +36,27 @@ COMPETENCIA:
   - Ruta ejemplo: C:\Users\Usuario\Desktop\Julian\Workspace\incan\comercio_negocios_latam_sac
 - **Analizar diseños modernos** y animaciones CSS atractivas de la competencia. ✅ Se aplicaron gradientes dorados, `animate-fadeUp` y pulsos suaves para dar dinamismo.
 - **Identificar secciones** que puedan actualizarse o agregarse comparando con competidores. ✅ Nuevas secciones “Awards” en Coffee y Cacao + mejora del CTA.
+-  Impressum y
+Datenschutz
+Cookie-Einstellungen
+Lieferbedingungen
+Widerrufsbelehrung
+AGB
+- mejorar icono
+- videos agregar cacao pero en index principal y en cacao, no en coffee
+https://www.youtube.com/watch?v=h0ZNpwtVONE
+https://www.youtube.com/watch?v=Z02g4jSlFho
+https://www.youtube.com/watch?v=yNjE6PkGpA8
+- mas animaciones (prioridad)
 
+
+- se necesita un shop general para cacao y café, con carrito de compras, para integrar en la web.
+
+- separar coffe de cacao que no se junte la informacion
+
+- backend para administrar productos, pedidos, clientes, etc. (prioridad shop unico)
+
+- asegurar agregar todos proyectos maybol cacao(ej: mujeres)
 ---
 
 seccion awards https://enter.chocolateawards.com/ (referida en la web)
