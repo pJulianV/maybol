@@ -1,0 +1,17 @@
+{
+  "name": "maybol",
+  "version": "1.0.0",
+  "description": "Maybol website with AI assistant backend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  }
+}
+

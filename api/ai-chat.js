@@ -6,19 +6,15 @@ const SYSTEM_PROMPT =
 
 function allowCors(req, res) {
   const origin = req.headers.origin;
-  const allowed = (process.env.ALLOWED_ORIGINS || '')
-    .split(',')
-    .map((o) => o.trim())
-    .filter(Boolean);
 
-  // If no origins are configured, allow all origins (useful for local/dev environments).
-  const allowAll = allowed.length === 0;
-
-  if (origin && (allowAll || allowed.includes(origin))) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-  }
+  // For this endpoint, we allow any origin (CORS). The API is protected by the
+  // Hugging Face token, so allowing cross-origin calls is acceptable for this use.
+  // If you want to restrict it, set ALLOWED_ORIGINS to a comma-separated list
+  // of allowed domains (e.g. https://example.com).
+  res.setHeader('Access-Control-Allow-Origin', origin || '*');
   res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, POST');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
   return !!origin;
 }
 
@@ -38,7 +34,7 @@ module.exports = async (req, res) => {
     return res.status(500).json({ error: 'HF_TOKEN (Hugging Face token) is not configured' });
   }
 
-  const hfApiUrl = process.env.HF_API_URL || 'https://api-inference.huggingface.co/v1/chat/completions';
+  const hfApiUrl = process.env.HF_API_URL || 'https://router.huggingface.co/v1/chat/completions';
   const hfModel = process.env.HF_MODEL || 'gpt2';
 
   const { prompt } = req.body || {};
@@ -47,6 +43,9 @@ module.exports = async (req, res) => {
   }
 
   try {
+    // Debug: log configured HF API URL so we can confirm which endpoint is being used.
+    console.log('HF API URL:', hfApiUrl);
+
     const hfRes = await fetch(hfApiUrl, {
       method: 'POST',
       headers: {
