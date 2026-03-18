@@ -1,7 +1,8 @@
-// Endpoint /api/ai-chat — Hugging Face Inference API
+// Endpoint /api/ai-chat — Hugging Face Inference Providers
 // Variables requeridas en Render:
-//   HF_TOKEN → token tipo "Read" de huggingface.co/settings/tokens
-//   HF_MODEL → mistralai/Mistral-7B-Instruct-v0.3
+//   HF_TOKEN → token con permiso "Make calls to Inference Providers"
+//              Crear en: https://huggingface.co/settings/tokens
+//   HF_MODEL → (opcional) por defecto usa meta-llama/Llama-3.1-8B-Instruct
 
 const SYSTEM_PROMPT =
   'Eres el asistente virtual oficial de Meybol (todas sus marcas). ' +
@@ -22,13 +23,13 @@ module.exports = async function aiChatHandler(req, res) {
     }
 
     const HF_TOKEN = process.env.HF_TOKEN;
-    const HF_MODEL = process.env.HF_MODEL || 'mistralai/Mistral-7B-Instruct-v0.3';
+    // Usar :fastest para que HF elija automáticamente el proveedor disponible
+    const HF_MODEL = (process.env.HF_MODEL || 'meta-llama/Llama-3.1-8B-Instruct') + ':fastest';
 
     if (!HF_TOKEN) {
       return res.status(500).json({ error: 'HF_TOKEN no configurado.' });
     }
 
-    // Construir mensajes en formato chat
     const messages = [{ role: 'system', content: SYSTEM_PROMPT }];
 
     if (Array.isArray(history)) {
@@ -40,24 +41,20 @@ module.exports = async function aiChatHandler(req, res) {
     }
     messages.push({ role: 'user', content: userMessage });
 
-    // Llamada al router de HF (OpenAI-compatible)
-    const hfRes = await fetch(
-      `https://router.huggingface.co/hf-inference/models/${HF_MODEL}/v1/chat/completions`,
-      {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${HF_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          model: HF_MODEL,
-          messages,
-          max_tokens: 300,
-          temperature: 0.7,
-          stream: false,
-        }),
-      }
-    );
+    const hfRes = await fetch('https://router.huggingface.co/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${HF_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: HF_MODEL,
+        messages,
+        max_tokens: 300,
+        temperature: 0.7,
+        stream: false,
+      }),
+    });
 
     const rawText = await hfRes.text();
 
@@ -71,16 +68,11 @@ module.exports = async function aiChatHandler(req, res) {
     }
 
     let data;
-    try {
-      data = JSON.parse(rawText);
-    } catch {
+    try { data = JSON.parse(rawText); } catch {
       return res.status(502).json({ error: 'Respuesta inválida de HF.', detail: rawText });
     }
 
-    const reply =
-      data?.choices?.[0]?.message?.content ||
-      'Lo siento, no pude generar una respuesta.';
-
+    const reply = data?.choices?.[0]?.message?.content || 'Lo siento, no pude generar una respuesta.';
     return res.json({ reply: reply.trim() });
 
   } catch (err) {
