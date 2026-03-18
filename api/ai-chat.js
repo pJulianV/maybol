@@ -62,6 +62,7 @@ module.exports = async (req, res) => {
     });
 
     const data = await hfRes.json();
+    console.log('Hugging Face API response:', JSON.stringify(data));
     if (!hfRes.ok) {
       const detail = data?.error || JSON.stringify(data);
       return res.status(hfRes.status).json({ error: 'Hugging Face responded with an error', detail });
@@ -72,6 +73,11 @@ module.exports = async (req, res) => {
       data?.choices?.[0]?.text ||
       data?.output?.[0]?.generated_text ||
       '';
+
+    if (!result) {
+      // Log para saber si el modelo no devuelve nada útil
+      console.log('WARNING: Hugging Face API returned empty result for prompt:', prompt);
+    }
 
     return res.status(200).json({ result: String(result).trim() });
   } catch (err) {
