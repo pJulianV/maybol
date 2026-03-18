@@ -43,7 +43,7 @@ module.exports = async function aiChatHandler(req, res) {
     llmPrompt += `${userMessage} [/INST]`;
 
     const hfRes = await fetch(
-      `https://api-inference.huggingface.co/models/${HF_MODEL}`,
+      `https://router.huggingface.co/hf-inference/models/${HF_MODEL}`,
       {
         method: 'POST',
         headers: {
