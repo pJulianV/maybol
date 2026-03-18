@@ -19,7 +19,7 @@ module.exports = async function aiChatHandler(req, res) {
     }
 
     const HF_TOKEN = process.env.HF_TOKEN;
-    const HF_MODEL = process.env.HF_MODEL || 'mistralai/Mistral-7B-Instruct-v0.3';
+    const HF_MODEL = process.env.HF_MODEL || 'HuggingFaceH4/zephyr-7b-beta';
 
     if (!HF_TOKEN) {
       return res.status(500).json({ error: 'HF_TOKEN no configurado en el servidor.' });
