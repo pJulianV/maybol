@@ -15,10 +15,11 @@ const SYSTEM_PROMPT =
 
 module.exports = async function aiChatHandler(req, res) {
   try {
-    const { message, history } = req.body || {};
+    const { message, prompt, history } = req.body || {};
+    const userMessage = message || prompt;
 
-    if (!message) {
-      return res.status(400).json({ error: 'Falta el campo "message".' });
+    if (!userMessage) {
+      return res.status(400).json({ error: 'Falta el campo "message" o "prompt".' });
     }
 
     const HF_TOKEN = process.env.HF_TOKEN;
@@ -29,17 +30,17 @@ module.exports = async function aiChatHandler(req, res) {
     }
 
     // Construir prompt formato Llama-2 chat
-    let prompt = `<s>[INST] <<SYS>>\n${SYSTEM_PROMPT}\n<</SYS>>\n\n`;
+    let llmPrompt = `<s>[INST] <<SYS>>\n${SYSTEM_PROMPT}\n<</SYS>>\n\n`;
 
     // Agregar historial previo si existe
     if (Array.isArray(history)) {
       for (const turn of history) {
-        if (turn.role === 'user') prompt += `${turn.content} [/INST] `;
-        else if (turn.role === 'assistant') prompt += `${turn.content} </s><s>[INST] `;
+        if (turn.role === 'user') llmPrompt += `${turn.content} [/INST] `;
+        else if (turn.role === 'assistant') llmPrompt += `${turn.content} </s><s>[INST] `;
       }
     }
 
-    prompt += `${message} [/INST]`;
+    llmPrompt += `${userMessage} [/INST]`;
 
     const hfRes = await fetch(
       `https://api-inference.huggingface.co/models/${HF_MODEL}`,
@@ -50,7 +51,7 @@ module.exports = async function aiChatHandler(req, res) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          inputs: prompt,
+          inputs: llmPrompt,
           parameters: {
             max_new_tokens: 300,
             temperature: 0.7,
