@@ -91,8 +91,8 @@
 
       let aiText = 'Error en la respuesta AI';
       if (res.ok) {
-        if (data && data.result) {
-          aiText = data.result;
+        if (data && (data.reply || data.result)) {
+          aiText = data.reply || data.result;
         } else if (data && data.error) {
           aiText = `Error AI: ${data.error}`;
         } else if (raw.trim()) {
