@@ -23,7 +23,10 @@
               <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path d="M10 0C4.477 0 0 4.477 0 10c0 1.763.463 3.476 1.344 4.987L0 20l5.196-1.322A9.95 9.95 0 0010 20c5.523 0 10-4.477 10-10S15.523 0 10 0zm5.58 13.855c-.235.66-1.37 1.26-1.887 1.32-.48.056-1.09.08-1.76-.11-.406-.117-.928-.274-1.596-.538C7.9 13.647 6.31 11.8 6.19 11.65c-.12-.15-.98-1.3-.98-2.48 0-1.18.62-1.76.84-2 .218-.24.476-.3.635-.3.16 0 .318.002.457.01.147.007.344-.056.538.41.2.48.677 1.66.736 1.78.058.122.097.264.02.424-.077.16-.116.26-.234.4-.12.14-.25.314-.358.422-.12.12-.244.25-.105.49.14.24.62 1.02 1.33 1.65.914.812 1.685 1.064 1.926 1.186.24.12.38.1.52-.06.14-.16.597-.697.757-.937.16-.24.318-.2.537-.12.22.08 1.397.66 1.637.78.24.12.398.18.458.28.06.1.06.56-.176 1.22z"/></svg>
             </a>
             <a href="https://www.tiktok.com/@meybolcacao1" target="_blank" title="TikTok" aria-label="TikTok" style="margin-left:6px;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.44 0 9.92-4 9.99-9.44V12h-2v-.44C19.91 12.76 16.41 15 12 15c-1.66 0-3-1.34-3-3s1.34-3 3-3c1.12 0 2.08.6 2.6 1.46V8h2v4.18C16.71 12.07 14.53 10 12 10c-2.21 0-4 1.79-4 4s1.79 4 4 4c3.54 0 6.43-2.86 6.93-6.43H20V12C19.92 17.52 15.52 22 10 22 4.48 22 0 17.52 0 12S4.48 2 10 2h2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 48 48" fill="currentColor"><path d="M41.5 15.5c-3.6 0-6.5-2.9-6.5-6.5h-4c0 5.8 4.7 10.5 10.5 10.5v4c-8.1 0-14.5-6.4-14.5-14.5h-4v24c0 2.5-2 4.5-4.5 4.5s-4.5-2-4.5-4.5 2-4.5 4.5-4.5c.7 0 1.4.2 2 .5v-4.3c-.7-.1-1.3-.2-2-.2-4.7 0-8.5 3.8-8.5 8.5s3.8 8.5 8.5 8.5 8.5-3.8 8.5-8.5V8.5c2.1 3.6 6 6 10.5 6v1z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/meybol-cacao-germany/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="margin-left:6px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
             </a>
           </div>
         </div>
@@ -38,12 +41,12 @@
           </div>
           <p class="footer-title" style="margin-top:1.5rem;">Rechtliches</p>
           <div class="footer-links">
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutz</a>
-            <a href="#">Lieferbedingungen</a>
-            <a href="#">Widerrufsbelehrung</a>
-            <a href="#">AGB</a>
-            <a href="#">Cookie-Einstellungen</a>
+            <a href="https://www.meybolcacao.de/impressum/" target="_blank">Impressum</a>
+            <a href="https://www.meybolcacao.de/datenschutz/" target="_blank">Datenschutz</a>
+            <a href="https://www.meybolcacao.de/lieferbedingungen/" target="_blank">Lieferbedingungen</a>
+            <a href="https://www.meybolcacao.de/widerrufsbelehrung/" target="_blank">Widerrufsbelehrung</a>
+            <a href="https://www.meybolcacao.de/agb/" target="_blank">AGB</a>
+            <a href="https://www.meybolcacao.de/cookie-einstellungen/" target="_blank">Cookie-Einstellungen</a>
           </div>
         </div>
         <div>

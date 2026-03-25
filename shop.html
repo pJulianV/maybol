@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meybol Shop – Cacao & Coffee</title>
+  <meta name="description" content="Shop general de Meybol: Cacao y Coffee. Compra productos artesanales, sostenibles y premiados.">
+  <link rel="stylesheet" href="assets/shop.css">
+</head>
+<body>
+  <nav class="shop-nav">
+    <a href="../maybolcacao/index.html">Cacao</a>
+    <a href="../maybolcoffe/index.html">Coffee</a>
+    <a href="#cart" id="cart-btn">🛒 <span id="cart-count">0</span></a>
+  </nav>
+  <header class="shop-hero animate-fadeUp">
+    <h1 class="animate-zoomIn">Meybol Shop</h1>
+    <p class="animate-fadeInUp">Descubre lo mejor de <b>Cacao</b> y <b>Coffee</b> en un solo lugar.</p>
+  </header>
+  <main>
+    <section class="shop-products animate-fadeUp" id="products-list">
+      <!-- Productos se insertan por JS -->
+    </section>
+    <aside class="shop-cart animate-fadeInRight" id="cart-panel" style="display:none;">
+      <h2 class="animate-fadeInLeft">Carrito de compras</h2>
+      <div id="cart-items"></div>
+      <div id="cart-total" class="animate-fadeInUp"></div>
+      <button id="close-cart">Cerrar</button>
+      <button id="checkout-btn" class="animate-bounce">Finalizar compra</button>
+    </aside>
+  </main>
+  <script src="assets/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body {font-family: 'Roboto', sans-serif; margin:0; background:#faf8f7; color:#333;}
+.shop-nav {display:flex;gap:2rem;justify-content:center;align-items:center;padding:1.2rem 0;background:#d4af37;box-shadow:0 2px 12px #0001;}
+.shop-nav a {color:#fff;font-weight:700;text-decoration:none;font-size:1.1rem;letter-spacing:.04em;transition:.2s;}
+.shop-nav a:hover {color:#002156;}
+.shop-hero {text-align:center;padding:3rem 1rem 2rem 1rem;background:linear-gradient(120deg,#fffbe6 60%,#f5e7c6 100%);}
+.shop-hero h1 {font-size:2.5rem;margin-bottom:.5rem;letter-spacing:.08em;}
+.shop-products {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;max-width:1200px;margin:2rem auto;padding:0 1rem;}
+.product-card {background:#fff;border-radius:12px;box-shadow:0 2px 16px #0002;padding:1.5rem;display:flex;flex-direction:column;align-items:center;transition:transform .18s;}
+.product-card:hover {transform:translateY(-6px) scale(1.03);box-shadow:0 6px 24px #d4af3740;}
+.product-card img {width:120px;height:120px;object-fit:cover;border-radius:8px;margin-bottom:1rem;}
+.product-card .product-title {font-size:1.1rem;font-weight:700;margin-bottom:.5rem;}
+.product-card .product-type {font-size:.95rem;color:#b79770;margin-bottom:.5rem;}
+.product-card .product-price {font-size:1.1rem;font-weight:700;color:#d4af37;margin-bottom:1rem;}
+.product-card button {background:#002156;color:#fff;border:none;padding:.6rem 1.2rem;border-radius:6px;font-weight:700;cursor:pointer;transition:.2s;}
+.product-card button:hover {background:#d4af37;color:#002156;}
+.shop-cart {position:fixed;top:60px;right:24px;width:340px;max-width:90vw;background:#fff;border-radius:16px 16px 8px 8px;box-shadow:0 4px 24px #0003;z-index:9999;padding:2rem 1.2rem;display:flex;flex-direction:column;gap:1rem;}
+#cart-items {max-height:220px;overflow-y:auto;}
+#cart-items .cart-item {display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;}
+#cart-items .cart-item-title {font-weight:600;}
+#cart-items .cart-item-qty {margin:0 .7rem;}
+#cart-total {font-weight:700;font-size:1.1rem;text-align:right;margin-top:1rem;}
+#close-cart {background:#eee;color:#333;margin-bottom:.5rem;}
+#checkout-btn {background:#d4af37;color:#002156;}
+#checkout-btn:hover {background:#002156;color:#fff;}
+@media (max-width:600px){.shop-cart{top:0;right:0;width:100vw;border-radius:0;}}

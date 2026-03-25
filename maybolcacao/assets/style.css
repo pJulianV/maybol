@@ -23,12 +23,23 @@
 }
 
 /* animation keyframes */
+
 @keyframes fadeInUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+@keyframes fadeInLeft { from {opacity:0; transform:translateX(-40px);} to {opacity:1; transform:translateX(0);} }
+@keyframes fadeInRight { from {opacity:0; transform:translateX(40px);} to {opacity:1; transform:translateX(0);} }
+@keyframes slideDown { from {opacity:0; transform:translateY(-60px);} to {opacity:1; transform:translateY(0);} }
+@keyframes zoomIn { from {opacity:0; transform:scale(0.92);} to {opacity:1; transform:scale(1);} }
+@keyframes bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);} }
 @keyframes pulse { 0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);} }
 
 /* utility classes for animations */
-.animate-fadeUp { animation: fadeInUp .8s ease forwards; }
-.animate-pulse:hover { animation: pulse 1.2s infinite; }
+.animate-fadeUp { animation: fadeInUp .8s cubic-bezier(.4,0,.2,1) forwards; }
+.animate-fadeInLeft { animation: fadeInLeft .9s cubic-bezier(.4,0,.2,1) forwards; }
+.animate-fadeInRight { animation: fadeInRight .9s cubic-bezier(.4,0,.2,1) forwards; }
+.animate-slideDown { animation: slideDown 1s cubic-bezier(.4,0,.2,1) forwards; }
+.animate-zoomIn { animation: zoomIn 1.1s cubic-bezier(.4,0,.2,1) forwards; }
+.animate-bounce { animation: bounce 1.2s infinite; }
+.animate-pulse { animation: pulse 1.2s infinite; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }

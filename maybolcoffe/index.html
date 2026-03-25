@@ -118,19 +118,24 @@
 </script>
 <script src="assets/nav.js"></script>
 
-<!-- HERO -->
-<section class="hero animate-fadeUp" style="min-height:90vh;">
-  <div class="hero__bg" style="background-image:url('img/img5.avif');"></div>
-  <div class="hero__overlay"></div>
-  <div class="hero__content">
-    <p class="hero__subtitle">Single Origin · 100% Arabica · Peru</p>
-    <h1 class="hero__title">Kaffeegenuss mit<br>reinem Gewissen.</h1>
-    <p class="hero__lead">Premium-Hochlandkaffee aus starken Frauenhänden – nachhaltig, fair und einzigartig im Geschmack.</p>
-    <a href="shop.html" class="btn btn-primary">Jetzt entdecken</a>
-    &ensp;
-    <a href="uber-uns.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.7);color:#fff;">Unsere Geschichte</a>
+
+<!-- HERO con video de fondo y animaciones modernas -->
+<section class="hero animate-fadeUp" style="min-height:90vh;position:relative;overflow:hidden;">
+  <video class="hero__video-bg animate-zoomIn" autoplay loop muted playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:brightness(0.7) saturate(1.1);">
+    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+    <!-- Puedes reemplazar el src por un video de café real -->
+  </video>
+  <div class="hero__overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(120deg,rgba(212,175,55,0.18) 0%,rgba(0,33,86,0.45) 100%);z-index:1;"></div>
+  <div class="hero__content animate-slideDown" style="position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;height:90vh;">
+    <p class="hero__subtitle animate-fadeInLeft" style="font-size:1.3rem;letter-spacing:2px;color:#fff;text-shadow:0 2px 8px #000a;">Single Origin · 100% Arabica · Peru</p>
+    <h1 class="hero__title animate-zoomIn" style="font-size:clamp(2.5rem,7vw,4.5rem);color:#fff;text-shadow:0 4px 24px #000b;">Kaffeegenuss mit<br>reinem Gewissen.</h1>
+    <p class="hero__lead animate-fadeInRight" style="color:#fff;font-size:1.2rem;max-width:600px;margin:1.5rem auto 2rem auto;text-shadow:0 2px 8px #000a;">Premium-Hochlandkaffee aus starken Frauenhänden – nachhaltig, fair und einzigartig im Geschmack.</p>
+    <div style="display:flex;gap:1.2rem;justify-content:center;">
+      <a href="shop.html" class="btn btn-primary animate-pulse">Jetzt entdecken</a>
+      <a href="uber-uns.html" class="btn btn-outline animate-fadeInUp" style="border-color:rgba(255,255,255,.7);color:#fff;">Unsere Geschichte</a>
+    </div>
   </div>
-  <div class="hero__scroll">scrollen</div>
+  <div class="hero__scroll animate-bounce" style="position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);color:#fff;font-size:1.1rem;z-index:2;letter-spacing:2px;">scrollen ↓</div>
 </section>
 
 <!-- FEATURES STRIP -->
@@ -178,19 +183,19 @@
 <!-- PROMISES SECTION -->
 <section class="section-pad bg-light promises animate-fadeUp">
   <div class="container">
-    <h2 class="section-title text-center">Unsere Versprechen</h2>
+    <h2 class="section-title text-center animate-slideDown">Unsere Versprechen</h2>
     <div class="features-grid">
-      <div class="feature-card">
+      <div class="feature-card animate-fadeInLeft">
         <div class="feature-card__icon">✅</div>
         <div class="feature-card__title">100 % Zufriedenheitsgarantie</div>
         <p>Unsere Bohnen sind von höchster Qualität – oder zurück!</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card animate-fadeInUp">
         <div class="feature-card__icon">⚡</div>
         <div class="feature-card__title">Schnelle Lieferung</div>
         <p>Frisch geröstet, schnell verpackt und versandt – weltweit.</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card animate-fadeInRight">
         <div class="feature-card__icon">🌿</div>
         <div class="feature-card__title">Frauen stärken</div>
         <p>Ein Teil des Erlöses unterstützt peruanische Frauenkooperativen.</p>
@@ -219,29 +224,29 @@
 </section>
 
 <!-- FEATURED PRODUCTS -->
-<section class="section-pad bg-light">
+<section class="section-pad bg-light animate-fadeUp">
   <div class="container">
-    <div class="text-center">
-      <span class="section-label">Unsere Kaffeesorten</span>
-      <h2 class="section-title">Entdecke unsere ersten Kaffeesorten</h2>
-      <div class="divider"></div>
+    <div class="text-center animate-slideDown">
+      <span class="section-label animate-fadeInLeft">Unsere Kaffeesorten</span>
+      <h2 class="section-title animate-zoomIn">Entdecke unsere ersten Kaffeesorten</h2>
+      <div class="divider animate-fadeInRight"></div>
     </div>
     <div class="products-grid">
-      <div class="product-card">
-        <div class="product-card__img-wrap">
+      <div class="product-card animate-fadeInLeft">
+        <div class="product-card__img-wrap animate-zoomIn">
           <img src="img/img5.avif" alt="Ganze Kaffeebohnen Dunkel geröstet" loading="lazy">
-          <span class="product-card__badge new">Bestseller</span>
+          <span class="product-card__badge new animate-bounce">Bestseller</span>
         </div>
         <div class="product-card__body">
           <div class="product-card__type">100% Arabica · Single Origin</div>
           <div class="product-card__name">Ganze Kaffeebohnen Dunkel geröstet</div>
           <div class="product-card__desc">Kräftiges Aroma, voller Körper – perfekt für Espresso und Filterkaffee.</div>
           <div class="product-card__price">10,49 €</div>
-          <a href="shop.html" class="product-card__link">Zum Shop →</a>
+          <a href="shop.html" class="product-card__link animate-pulse">Zum Shop →</a>
         </div>
       </div>
-      <div class="product-card">
-        <div class="product-card__img-wrap">
+      <div class="product-card animate-fadeInUp">
+        <div class="product-card__img-wrap animate-zoomIn">
           <img src="img/img6.avif" alt="Ganze Kaffeebohnen Sanft geröstet" loading="lazy">
         </div>
         <div class="product-card__body">
@@ -249,20 +254,20 @@
           <div class="product-card__name">Ganze Kaffeebohnen Sanft geröstet</div>
           <div class="product-card__desc">Milde Röstung, fruchtige Nuancen – ideal für pour-over und French Press.</div>
           <div class="product-card__price">10,49 €</div>
-          <a href="shop.html" class="product-card__link">Zum Shop →</a>
+          <a href="shop.html" class="product-card__link animate-pulse">Zum Shop →</a>
         </div>
       </div>
-      <div class="product-card">
-        <div class="product-card__img-wrap">
+      <div class="product-card animate-fadeInRight">
+        <div class="product-card__img-wrap animate-zoomIn">
           <img src="img/img3.avif" alt="Kaffee & Schokolade Set" loading="lazy">
-          <span class="product-card__badge organic">Empfehlung</span>
+          <span class="product-card__badge organic animate-bounce">Empfehlung</span>
         </div>
         <div class="product-card__body">
           <div class="product-card__type">Bundle</div>
           <div class="product-card__name">Drei Projektschokoladen + Kaffee Set</div>
           <div class="product-card__desc">Das perfekte Genuss-Duo: unser Kaffee und drei handgemachte Projektschokoladen.</div>
           <div class="product-card__price">21,00 €</div>
-          <a href="shop.html" class="product-card__link">Zum Shop →</a>
+          <a href="shop.html" class="product-card__link animate-pulse">Zum Shop →</a>
         </div>
       </div>
     </div>
@@ -272,24 +277,24 @@
 <!-- AWARDS SECTION -->
 <section class="section-pad bg-cream animate-fadeUp">
   <div class="container">
-    <div class="text-center">
-      <span class="section-label">Auszeichnungen</span>
-      <h2 class="section-title">Prämiert &amp; anerkannt</h2>
-      <div class="divider"></div>
-      <p class="section-subtitle">Unsere Röstungen wurden mehrfach für Geschmack, Nachhaltigkeit und Handwerkskunst ausgezeichnet.</p>
+    <div class="text-center animate-slideDown">
+      <span class="section-label animate-fadeInLeft">Auszeichnungen</span>
+      <h2 class="section-title animate-zoomIn">Prämiert &amp; anerkannt</h2>
+      <div class="divider animate-fadeInRight"></div>
+      <p class="section-subtitle animate-fadeInUp">Unsere Röstungen wurden mehrfach für Geschmack, Nachhaltigkeit und Handwerkskunst ausgezeichnet.</p>
     </div>
     <div class="features-grid">
-      <div class="feature-card">
+      <div class="feature-card animate-bounce">
         <div class="feature-card__icon">🏆</div>
         <div class="feature-card__title">International Coffee Awards</div>
         <p>Gold für Nachhaltigkeit &amp; Qualität – ein Zeichen unserer Sorgfalt vom Anbau bis zur Röstung.</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card animate-pulse">
         <div class="feature-card__icon">🌿</div>
         <div class="feature-card__title">Nachhaltigkeits-Siegel</div>
         <p>Geprüfte Wertschöpfungskette und faire Preise für die Bäuerinnen der Region.</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card animate-fadeInUp">
         <div class="feature-card__icon">✨</div>
         <div class="feature-card__title">Kundenliebling 2025</div>
         <p>Top-Bewertungen in der Community für Geschmack, Transparenz und Packaging.</p>

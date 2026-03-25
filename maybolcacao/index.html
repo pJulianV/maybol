@@ -118,40 +118,78 @@
 </script>
 <script src="assets/nav.js"></script>
 
-<!-- HERO -->
-<section class="hero animate-fadeUp" style="min-height:90vh;">
-  <img class="hero__img"
-    src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;0;0,width=1920,height=1250/image/325755915/3e76d6ad-cfab-4bc1-aefe-519c378dd38e.jpg"
-    alt="Meybol Cacao – Handgemachte Schokolade aus Peru"
-    loading="eager">
-  <div class="hero__overlay"></div>
-  <div class="hero__content">
-    <p class="hero__subtitle">Tree-to-Bar · Urkakao aus Peru</p>
-    <h1 class="hero__title">Mehrfach prämierte<br>Edelschokolade</h1>
-    <p class="hero__lead">Handgemacht aus seltenen Chuncho-Kakaobohnen. Nachhaltig, fair und einzigartig im Geschmack.</p>
-    <a href="shop.html" class="btn btn-primary">Jetzt entdecken</a>
-    &ensp;
-    <a href="awards.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.7);color:#fff;">Unsere Awards</a>
+
+<!-- HERO con animaciones modernas -->
+<section class="hero animate-fadeUp" style="min-height:70vh;position:relative;overflow:hidden;background:linear-gradient(120deg,#f5e7c6 60%,#e8d5b8 100%);">
+  <div class="hero__content animate-slideDown" style="position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;height:70vh;">
+    <p class="hero__subtitle animate-fadeInLeft" style="font-size:1.3rem;letter-spacing:2px;color:#7a5c3a;text-shadow:0 2px 8px #fff8;">Tree-to-Bar · Urkakao aus Peru</p>
+    <h1 class="hero__title animate-zoomIn" style="font-size:clamp(2.5rem,7vw,4.5rem);color:#4a2c0a;text-shadow:0 4px 24px #fff8;">Mehrfach prämierte<br>Edelschokolade</h1>
+    <p class="hero__lead animate-fadeInRight" style="color:#7a5c3a;font-size:1.2rem;max-width:600px;margin:1.5rem auto 2rem auto;text-shadow:0 2px 8px #fff8;">Handgemacht aus seltenen Chuncho-Kakaobohnen. Nachhaltig, fair und einzigartig im Geschmack.</p>
+    <div style="display:flex;gap:1.2rem;justify-content:center;">
+      <a href="shop.html" class="btn btn-primary animate-pulse">Jetzt entdecken</a>
+      <a href="awards.html" class="btn btn-outline animate-fadeInUp" style="border-color:rgba(212,175,55,.7);color:#7a5c3a;">Unsere Awards</a>
+    </div>
   </div>
-  <div class="hero__scroll">scrollen</div>
+  <div class="hero__scroll animate-bounce" style="position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);color:#7a5c3a;font-size:1.1rem;z-index:2;letter-spacing:2px;">scrollen ↓</div>
 </section>
 
 <!-- FEATURES STRIP -->
-<section class="section-pad bg-cream">
+<section class="section-pad bg-cream animate-fadeUp">
   <div class="container">
     <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-card__icon">🌿</div>
+      <div class="feature-card animate-fadeInLeft">
+        <div class="feature-card__icon">🌱</div>
         <div class="feature-card__title">Tree-to-Bar</div>
         <p>Von der Kakaobohne bis zur fertigen Tafel – vollständige Kontrolle über jeden Produktionsschritt.</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card animate-zoomIn">
         <div class="feature-card__icon">🏆</div>
         <div class="feature-card__title">Mehrfach ausgezeichnet</div>
         <p>International Chocolate Award Gewinner von 2018 bis 2022 – Gold, Silber und Bronze.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-card__icon">🌱</div>
+      <div class="feature-card animate-fadeInRight">
+        <div class="feature-card__icon">🌿</div>
+        <div class="feature-card__title">Nachhaltigkeit</div>
+        <p>Faire Preise für Kleinbauern im Amazonasgebiet und aktiver Schutz des Regenwaldes.</p>
+      </div>
+      <div class="feature-card animate-bounce">
+        <div class="feature-card__icon">🍫</div>
+        <div class="feature-card__title">Handgemacht</div>
+        <p>Jede Schokolade wird in kleinen Chargen mit viel Liebe gefertigt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTO MUJERES DESTACADO -->
+<section class="section-pad bg-light animate-fadeUp">
+  <div class="container">
+    <div class="text-center animate-slideDown">
+      <span class="section-label animate-fadeInLeft">Projekt Frauen stärken</span>
+      <h2 class="section-title animate-zoomIn">Misky, Inti & Ailla: Frauenprojekte in Peru</h2>
+      <div class="divider animate-fadeInRight"></div>
+      <p class="animate-fadeInUp">Unsere Schokoladenprojekte unterstützen gezielt Frauenkooperativen im Amazonasgebiet. Mit jedem Kauf stärkst du die wirtschaftliche Unabhängigkeit und das soziale Engagement peruanischer Frauen.</p>
+      <a href="projekt.html" class="btn btn-primary animate-bounce" style="margin-top:1.2rem;">Mehr erfahren</a>
+    </div>
+    <div class="projects-gallery" style="display:flex;gap:2rem;justify-content:center;margin-top:2.5rem;flex-wrap:wrap;">
+      <div class="project-card animate-fadeInLeft" style="background:#fff;border-radius:12px;box-shadow:0 2px 16px #0001;padding:1.5rem;max-width:320px;">
+        <img src="assets/misky.jpg" alt="Projekt Misky" style="width:100%;border-radius:8px;margin-bottom:1rem;">
+        <h3 style="font-size:1.1rem;font-weight:700;">Projekt Misky</h3>
+        <p>Fördert Bildung und Selbstständigkeit von Frauen im Kakaoanbau.</p>
+      </div>
+      <div class="project-card animate-fadeInUp" style="background:#fff;border-radius:12px;box-shadow:0 2px 16px #0001;padding:1.5rem;max-width:320px;">
+        <img src="assets/inti.jpg" alt="Projekt Inti" style="width:100%;border-radius:8px;margin-bottom:1rem;">
+        <h3 style="font-size:1.1rem;font-weight:700;">Projekt Inti</h3>
+        <p>Stärkt Frauenkooperativen und nachhaltige Landwirtschaft.</p>
+      </div>
+      <div class="project-card animate-fadeInRight" style="background:#fff;border-radius:12px;box-shadow:0 2px 16px #0001;padding:1.5rem;max-width:320px;">
+        <img src="assets/ailla.jpg" alt="Projekt Ailla" style="width:100%;border-radius:8px;margin-bottom:1rem;">
+        <h3 style="font-size:1.1rem;font-weight:700;">Projekt Ailla</h3>
+        <p>Unterstützt soziale Initiativen und die Gleichstellung der Frau.</p>
+      </div>
+    </div>
+  </div>
+</section>
         <div class="feature-card__title">Nachhaltigkeit</div>
         <p>Faire Preise für Kleinbauern im Amazonasgebiet und aktiver Schutz des Regenwaldes.</p>
       </div>
@@ -167,24 +205,24 @@
 <!-- AWARDS SECTION -->
 <section class="section-pad bg-light animate-fadeUp">
   <div class="container">
-    <div class="text-center">
-      <span class="section-label">Awards</span>
-      <h2 class="section-title">Prämierte Tree-to-Bar Schokolade</h2>
-      <div class="divider"></div>
-      <p class="section-subtitle">Unsere Kreationen wurden international ausgezeichnet – ein Qualitätsbeweis, der für sich spricht.</p>
+    <div class="text-center animate-slideDown">
+      <span class="section-label animate-fadeInLeft">Awards</span>
+      <h2 class="section-title animate-zoomIn">Prämierte Tree-to-Bar Schokolade</h2>
+      <div class="divider animate-fadeInRight"></div>
+      <p class="section-subtitle animate-fadeInUp">Unsere Kreationen wurden international ausgezeichnet – ein Qualitätsbeweis, der für sich spricht.</p>
     </div>
     <div class="features-grid">
-      <div class="feature-card">
+      <div class="feature-card animate-bounce">
         <div class="feature-card__icon">🥇</div>
         <div class="feature-card__title">International Chocolate Awards</div>
         <p>Gold und Silber für unsere seltenen Chuncho-Editionen. Mehr Infos unter <a href="https://enter.chocolateawards.com/" target="_blank" rel="noopener">Chocolate Awards</a>.</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card animate-pulse">
         <div class="feature-card__icon">🌍</div>
         <div class="feature-card__title">Nachhaltigkeit ausgezeichnet</div>
         <p>Auszeichnung für ökologisches Packaging und faire Lieferketten – für echten Impact.</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card animate-fadeInUp">
         <div class="feature-card__icon">💡</div>
         <div class="feature-card__title">Innovationspreis</div>
         <p>Prämiert für kommunikatives Storytelling und Produktdesign in der Premium-Kategorie.</p>
@@ -196,19 +234,19 @@
 <!-- PROMISES SECTION -->
 <section class="section-pad bg-light promises animate-fadeUp">
   <div class="container">
-    <h2 class="section-title text-center">Unsere Versprechen</h2>
+    <h2 class="section-title text-center animate-slideDown">Unsere Versprechen</h2>
     <div class="features-grid">
-      <div class="feature-card">
+      <div class="feature-card animate-fadeInLeft">
         <div class="feature-card__icon">✅</div>
         <div class="feature-card__title">100 % Zufriedenheitsgarantie</div>
         <p>Falls unsere Schokolade nicht begeistert, erstatten wir oder tauschen um.</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card animate-fadeInUp">
         <div class="feature-card__icon">🚚</div>
         <div class="feature-card__title">Schneller Versand</div>
         <p>Weltweiter Versand &amp; keine Schmelz-Garantie bei Ankunft.</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card animate-fadeInRight">
         <div class="feature-card__icon">🌱</div>
         <div class="feature-card__title">Regenwaldschutz</div>
         <p>Ein Teil jeder Bestellung fließt in Aufforstungsprojekte.</p>
@@ -239,67 +277,67 @@
 </section>
 
 <!-- FEATURED PRODUCTS -->
-<section class="section-pad bg-light">
+<section class="section-pad bg-light animate-fadeUp">
   <div class="container">
-    <div class="text-center">
-      <span class="section-label">Bestseller</span>
-      <h2 class="section-title">Ausgewählte Produkte</h2>
-      <div class="divider"></div>
+    <div class="text-center animate-slideDown">
+      <span class="section-label animate-fadeInLeft">Bestseller</span>
+      <h2 class="section-title animate-zoomIn">Ausgewählte Produkte</h2>
+      <div class="divider animate-fadeInRight"></div>
     </div>
     <div class="products-grid">
       <!-- Inti -->
-      <div class="product-card">
-        <div class="product-card__img-wrap">
+      <div class="product-card animate-fadeInLeft">
+        <div class="product-card__img-wrap animate-zoomIn">
           <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=788;0;787;0,width=800,height=800/image/390853606/324cd3f6-6bda-4404-8e84-3b5afc224e84.png" alt="Inti Schokolade 70%" loading="lazy">
-          <span class="product-card__badge gold">Gold 2024</span>
+          <span class="product-card__badge gold animate-bounce">Gold 2024</span>
         </div>
         <div class="product-card__body">
           <div class="product-card__type">Projektschokolade</div>
           <div class="product-card__name">Inti Schokolade 70%</div>
           <div class="product-card__price">8,00 €</div>
-          <a href="https://www.meybolcacao.de/shop/inti-schokolade---gold-praemierte-bean-to-bar-schokolade-2024-70-edelkakao-chuncho-aus-peru/" target="_blank" class="product-card__link">Jetzt kaufen →</a>
+          <a href="https://www.meybolcacao.de/shop/inti-schokolade---gold-praemierte-bean-to-bar-schokolade-2024-70-edelkakao-chuncho-aus-peru/" target="_blank" class="product-card__link animate-pulse">Jetzt kaufen →</a>
         </div>
       </div>
       <!-- AILLA -->
-      <div class="product-card">
-        <div class="product-card__img-wrap">
+      <div class="product-card animate-fadeInUp">
+        <div class="product-card__img-wrap animate-zoomIn">
           <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=918;0;918;0,width=800,height=800/image/390854510/9a3e26b8-bc8f-4d74-afac-f81a295fb925.png" alt="AILLA Dunkelschokolade 65%" loading="lazy">
         </div>
         <div class="product-card__body">
           <div class="product-card__type">Projektschokolade</div>
           <div class="product-card__name">AILLA – Dunkelschokolade 65%</div>
           <div class="product-card__price">8,00 €</div>
-          <a href="https://www.meybolcacao.de/shop/ailla---nachhaltige-dunkelschokolade-65-fuer-biodiversitaet-und-amazonas-schutz/" target="_blank" class="product-card__link">Jetzt kaufen →</a>
+          <a href="https://www.meybolcacao.de/shop/ailla---nachhaltige-dunkelschokolade-65-fuer-biodiversitaet-und-amazonas-schutz/" target="_blank" class="product-card__link animate-pulse">Jetzt kaufen →</a>
         </div>
       </div>
       <!-- Solo Kakao 90% -->
-      <div class="product-card">
-        <div class="product-card__img-wrap">
+      <div class="product-card animate-fadeInRight">
+        <div class="product-card__img-wrap animate-zoomIn">
           <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;1120;0;1120,width=800,height=800/image/326515932/d5dcfe44-b8ce-49c2-bacb-8ea869190330.jpg" alt="Solo Kakao 90%" loading="lazy">
-          <span class="product-card__badge gold">Gold 2022</span>
+          <span class="product-card__badge gold animate-bounce">Gold 2022</span>
         </div>
         <div class="product-card__body">
           <div class="product-card__type">Limited Edition</div>
           <div class="product-card__name">SOLO KAKAO 90% Limited Edition</div>
           <div class="product-card__price">20,00 €</div>
-          <a href="https://www.meybolcacao.de/shop/" target="_blank" class="product-card__link">Jetzt kaufen →</a>
+          <a href="https://www.meybolcacao.de/shop/" target="_blank" class="product-card__link animate-pulse">Jetzt kaufen →</a>
         </div>
       </div>
       <!-- Chuncho Collection N3 -->
-      <div class="product-card">
-        <div class="product-card__img-wrap">
+      <div class="product-card animate-fadeInUp">
+        <div class="product-card__img-wrap animate-zoomIn">
           <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;1120;0;1120,width=800,height=800/image/332008969/c6dd8b22-b53f-42e0-bb97-7c82fbba73c3.jpg" alt="Chuncho Collection N3" loading="lazy">
         </div>
         <div class="product-card__body">
           <div class="product-card__type">Collection</div>
           <div class="product-card__name">N°3 Chuncho Collection 72%</div>
           <div class="product-card__price">18,00 €</div>
-          <a href="https://www.meybolcacao.de/shop/" target="_blank" class="product-card__link">Jetzt kaufen →</a>
+          <a href="https://www.meybolcacao.de/shop/" target="_blank" class="product-card__link animate-pulse">Jetzt kaufen →</a>
         </div>
       </div>
     </div>
     <div class="text-center" style="margin-top:2.5rem;">
-      <a href="shop.html" class="btn btn-outline">Alle Produkte ansehen</a>
+      <a href="shop.html" class="btn btn-outline animate-fadeInUp">Alle Produkte ansehen</a>
     </div>
   </div>
 </section>

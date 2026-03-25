@@ -56,7 +56,7 @@ https://www.youtube.com/watch?v=yNjE6PkGpA8
 
 - backend para administrar productos, pedidos, clientes, etc. (prioridad shop unico)
 
-- asegurar agregar todos proyectos maybol cacao(ej: mujeres)
+- asegurar agregar todos proyectos maybol cacao(rezaltar proyecto de  mujeres)
 ---
 
 seccion awards https://enter.chocolateawards.com/ (referida en la web)
