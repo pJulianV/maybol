@@ -3,11 +3,298 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meybol Cacao Germany GmbH – Handgemachte Schokolade aus Peru</title>
-  <meta name="description" content="Meybol Cacao – Mehrfach prämierte, handgemachte Tree-to-Bar Schokolade aus seltenem peruanischen Urkakao. International Chocolate Award Gewinner.">
+  <title>Meybol Cacao – Mehrfach prämierte Tree-to-Bar Schokolade aus Peru</title>
+  <meta name="description" content="Meybol Cacao: Handgemachte, mehrfach prämierte Tree-to-Bar Schokolade aus seltenen peruanischen Urkakao-Sorten. Nachhaltig, fair, international ausgezeichnet.">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+
+<!-- AI Widget -->
+<button id="ai-toggle-btn" aria-label="Abrir asistente AI" style="position: fixed; bottom: 100px; right: 90px; width: 56px; height: 56px; border-radius: 50%; background: #8d6e63; color: #fff; border: none; box-shadow: 0 4px 16px rgba(0,0,0,0.18); z-index: 10000; display: flex; align-items: center; justify-content: center; font-size: 28px; cursor: pointer; transition: background 0.2s;"><span id="ai-toggle-icon">🤖</span></button>
+<div id="ai-chatbot-widget" style="position: fixed; bottom: 100px; right: 24px; width: 340px; max-width: 90vw; z-index: 9999; box-shadow: 0 4px 24px rgba(0,0,0,0.18); border-radius: 16px; background: #fff; display: none; flex-direction: column;">
+  <div style="background: #8d6e63; color: #fff; padding: 12px 16px; border-radius: 16px 16px 0 0; display: flex; align-items: center; justify-content: space-between;">
+    <span style="font-weight: 600;">Asistente AI</span>
+    <button style="background: none; border: none; color: #fff; font-size: 18px; cursor: pointer;" onclick="document.getElementById('ai-chatbot-widget').style.display='none'">×</button>
+  </div>
+  <div style="flex: 1; padding: 16px; overflow-y: auto; min-height: 120px; max-height: 260px; background: #f7f7f7;">
+    <div style="margin-bottom: 12px;"><div style="background: #e8d5b8; color: #222; padding: 10px 14px; border-radius: 12px 12px 12px 4px; max-width: 80%; font-size: 15px;">¡Hola! Soy tu asistente AI. ¿En qué puedo ayudarte hoy?</div></div>
+  </div>
+  <form style="display: flex; border-top: 1px solid #eee;" onsubmit="return false;">
+    <input type="text" placeholder="Escribe tu mensaje..." style="flex: 1; border: none; padding: 12px; font-size: 15px; outline: none;" disabled>
+    <button type="submit" style="background: #8d6e63; color: #fff; border: none; padding: 0 18px; cursor: not-allowed;" disabled>Enviar</button>
+  </form>
+</div>
+<script src="../ai-config.js"></script>
+<script>
+  const aiBtn = document.getElementById('ai-toggle-btn');
+  const aiWidget = document.getElementById('ai-chatbot-widget');
+  const aiIcon = document.getElementById('ai-toggle-icon');
+  const aiInput = aiWidget.querySelector('input[type="text"]');
+  const aiSend = aiWidget.querySelector('button[type="submit"]');
+  const aiChatArea = aiWidget.querySelector('div[style*="overflow-y: auto"]');
+  aiWidget.style.display = 'none';
+  aiInput.disabled = true;
+  aiSend.disabled = true;
+  let aiOpen = false;
+  
+  aiBtn.addEventListener('click', function() {
+    aiOpen = !aiOpen;
+    aiWidget.style.display = aiOpen ? 'flex' : 'none';
+    aiInput.disabled = !aiOpen;
+    aiSend.disabled = !aiOpen;
+    aiInput.focus();
+  });
+</script>
+
+<script src="assets/nav.js"></script>
+
+<!-- HERO SECTION with video background -->
+<section class="hero" style="position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: linear-gradient(135deg, #4a2c0a 0%, #7a5c3a 100%);">
+  
+  <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3; z-index: 0;">
+    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+  </video>
+  
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(120deg, rgba(74, 44, 10, 0.6) 0%, rgba(122, 92, 58, 0.7) 100%); z-index: 1;"></div>
+  
+  <div style="position: relative; z-index: 2; text-align: center; padding: 2rem; max-width: 900px;">
+    <p class="animate-fadeInLeft" style="font-size: 1.3rem; letter-spacing: 3px; color: #d4af37; text-shadow: 0 2px 8px #000; margin-bottom: 1rem; font-weight: 600;">TREE-TO-BAR · URKAKAO AUS PERU</p>
+    
+    <h1 class="animate-zoomIn" style="font-size: clamp(2.5rem, 8vw, 5rem); color: #fff; text-shadow: 0 4px 24px #000; margin-bottom: 1.5rem; font-weight: 900; line-height: 1.1;">Mehrfach prämierte<br>Handgemachte<br>Edelschokolade</h1>
+    
+    <p class="animate-fadeInRight" style="color: #f5e7c6; font-size: 1.2rem; max-width: 700px; margin: 0 auto 2.5rem; text-shadow: 0 2px 8px #000; line-height: 1.6;">Direkt vom Bauern in Peru zu dir nach Hause. Jede Tafel erzählt die Geschichte eines einzigartigen Kakaos.</p>
+    
+    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+      <a href="shop.html" class="animate-pulse" style="padding: 14px 32px; background: linear-gradient(135deg, #d4af37, #c9a228); color: #4a2c0a; font-weight: 700; border-radius: 30px; text-decoration: none; transition: all 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.3); display: inline-block; letter-spacing: 0.5px;">JETZT ENTDECKEN</a>
+      <a href="awards.html" class="animate-fadeInUp" style="padding: 14px 32px; background: transparent; color: #fff; font-weight: 700; border: 2px solid #d4af37; border-radius: 30px; text-decoration: none; transition: all 0.3s; display: inline-block; letter-spacing: 0.5px;">UNSERE AWARDS</a>
+    </div>
+  </div>
+  
+  <div class="animate-bounce" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); color: #d4af37; font-size: 1.2rem; z-index: 2; text-align: center;">
+    <div style="letter-spacing: 2px; font-weight: 600;">SCROLLEN</div>
+    <div style="font-size: 1.5rem; margin-top: 0.5rem;">↓</div>
+  </div>
+</section>
+
+<!-- ÜBER MEYBOL SECTION -->
+<section class="animate-fadeUp" style="padding: 6rem 2rem; background: linear-gradient(180deg, #f5e7c6 0%, #f0dab3 100%);">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    <div class="animate-slideDown" style="text-align: center; margin-bottom: 4rem;">
+      <p style="font-size: 0.9rem; letter-spacing: 2px; color: #8d6e63; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">ÜBER UNS</p>
+      <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); color: #4a2c0a; font-weight: 900; margin-bottom: 1rem;">Warum Meybol Cacao?</h2>
+      <div style="width: 60px; height: 4px; background: #d4af37; margin: 0 auto;"></div>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; flex-wrap: wrap;">
+      <div>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #5a4a3a; margin-bottom: 1.5rem;">Meybol Cacao steht für eine neue Art des Schokoladegenusses: <strong>authentisch, transparent und nachhaltig.</strong> Jede Tafel ist das Ergebnis von persönlichen Beziehungen zu peruanischen Kleinbauernfamilien und direktem, fairem Handel – weit mehr als fair.</p>
+        
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #5a4a3a; margin-bottom: 1.5rem;">Wir verwenden ausschließlich seltene, ursprüngliche Kakaosorten wie <strong>Chuncho und Piura Blanco</strong> – ohne Zusatzstoffe, ohne Zwischenhändler, ohne Kompromisse.</p>
+        
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #5a4a3a;">Qualität mit Seele – das ist Meybol Cacao.</p>
+      </div>
+      
+      <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=600,height=600/image/367045796/85776755-fbdb-49a8-91c8-ccb90782373b.jpg" alt="Meybol Cacao Schokolade" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); width: 100%; height: auto;">
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="animate-fadeUp" style="padding: 6rem 2rem; background: #fff;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    <div class="animate-slideDown" style="text-align: center; margin-bottom: 4rem;">
+      <p style="font-size: 0.9rem; letter-spacing: 2px; color: #8d6e63; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">UNSERE STÄRKEN</p>
+      <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); color: #4a2c0a; font-weight: 900; margin-bottom: 1rem;">Was uns einzigartig macht</h2>
+      <div style="width: 60px; height: 4px; background: #d4af37; margin: 0 auto;"></div>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+      <div class="animate-fadeInLeft" style="background: #f5e7c6; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: all 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🌱</div>
+        <h3 style="font-size: 1.3rem; color: #4a2c0a; font-weight: 700; margin-bottom: 0.8rem;">Tree-to-Bar</h3>
+        <p style="color: #5a4a3a; line-height: 1.6;">Von der Kakaobohne bis zur fertigen Tafel – der gesamte Herstellungsprozess wird von Hand durchgeführt und kontrolliert.</p>
+      </div>
+      
+      <div class="animate-fadeInUp" style="background: #f5e7c6; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: all 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🏆</div>
+        <h3 style="font-size: 1.3rem; color: #4a2c0a; font-weight: 700; margin-bottom: 0.8rem;">Mehrfach ausgezeichnet</h3>
+        <p style="color: #5a4a3a; line-height: 1.6;">International Chocolate Award Gewinner von 2018 bis 2024 – Gold, Silber und Bronze für exzellente Qualität.</p>
+      </div>
+      
+      <div class="animate-fadeInRight" style="background: #f5e7c6; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: all 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">♻️</div>
+        <h3 style="font-size: 1.3rem; color: #4a2c0a; font-weight: 700; margin-bottom: 0.8rem;">100% Nachhaltig</h3>
+        <p style="color: #5a4a3a; line-height: 1.6;">Faire Preise, Regenwaldschutz und aktive Unterstützung von Frauenkooperativen in Peru.</p>
+      </div>
+      
+      <div class="animate-bounce" style="background: #f5e7c6; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: all 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🍫</div>
+        <h3 style="font-size: 1.3rem; color: #4a2c0a; font-weight: 700; margin-bottom: 0.8rem;">Handgemacht</h3>
+        <p style="color: #5a4a3a; line-height: 1.6;">Jede Schokolade wird in kleinen Chargen mit viel Liebe und Sorgfalt in Hamburg gefertigt.</p>
+      </div>
+      
+      <div class="animate-zoomIn" style="background: #f5e7c6; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: all 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🫘</div>
+        <h3 style="font-size: 1.3rem; color: #4a2c0a; font-weight: 700; margin-bottom: 0.8rem;">Seltene Sorten</h3>
+        <p style="color: #5a4a3a; line-height: 1.6;">100% Chuncho und Piura Blanco – ursprüngliche Kakaosorten mit einzigartigem Aroma und Profil.</p>
+      </div>
+      
+      <div class="animate-pulse" style="background: #f5e7c6; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: all 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">👩‍🌾</div>
+        <h3 style="font-size: 1.3rem; color: #4a2c0a; font-weight: 700; margin-bottom: 0.8rem;">Frauen stärken</h3>
+        <p style="color: #5a4a3a; line-height: 1.6;">Direkte Zusammenarbeit mit Frauenkooperativen für wirtschaftliche Unabhängigkeit und Emanzipation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HANDGEMACHT SECTION (with better description) -->
+<section class="animate-fadeUp" style="padding: 6rem 2rem; background: linear-gradient(135deg, #f0dab3 0%, #e8d5b8 100%);">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    <div class="animate-slideDown" style="text-align: center; margin-bottom: 4rem;">
+      <p style="font-size: 0.9rem; letter-spacing: 2px; color: #8d6e63; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">QUALITÄT</p>
+      <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); color: #4a2c0a; font-weight: 900; margin-bottom: 1rem;">Handgemacht – Das Versprechen der Qualität</h2>
+      <div style="width: 60px; height: 4px; background: #d4af37; margin: 0 auto;"></div>
+    </div>
+    
+    <div style="background: #fff; padding: 3rem; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
+      <div style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1.5rem; color: #4a2c0a; font-weight: 700; margin-bottom: 1rem;">Jede Schokolade wird in kleinen Chargen mit viel Liebe gefertigt.</h3>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #5a4a3a; margin-bottom: 1.5rem;">Von der Ernte bis zur Tafel – der gesamte Herstellungsprozess ist eine Handwerkskunst. Im Gegensatz zu Industrieschokolade führen wir alle Schritte persönlich durch:</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+          <div style="background: #f5e7c6; padding: 1.5rem; border-radius: 8px;">
+            <p style="font-weight: 700; color: #8d6e63; margin-bottom: 0.5rem;">🌳 Pflege der Kakaobäume</p>
+            <p style="color: #5a4a3a; font-size: 0.95rem;">Nachaltige Anbaumethoden von Anfang an.</p>
+          </div>
+          
+          <div style="background: #f5e7c6; padding: 1.5rem; border-radius: 8px;">
+            <p style="font-weight: 700; color: #8d6e63; margin-bottom: 0.5rem;">🤲 Ernte & Fermentation</p>
+            <p style="color: #5a4a3a; font-size: 0.95rem;">Sorgfältig durchgeführt für optimales Aroma.</p>
+          </div>
+          
+          <div style="background: #f5e7c6; padding: 1.5rem; border-radius: 8px;">
+            <p style="font-weight: 700; color: #8d6e63; margin-bottom: 0.5rem;">🔥 Röstung & Mahlen</p>
+            <p style="color: #5a4a3a; font-size: 0.95rem;">Präzise Kontrolle jedes Verarbeitungsschritts.</p>
+          </div>
+          
+          <div style="background: #f5e7c6; padding: 1.5rem; border-radius: 8px;">
+            <p style="font-weight: 700; color: #8d6e63; margin-bottom: 0.5rem;">🍫 Conchieren & Formen</p>
+            <p style="color: #5a4a3a; font-size: 0.95rem;">Handwerk trifft Präzision in jeder Tafel.</p>
+          </div>
+        </div>
+        
+        <p style="font-size: 1rem; line-height: 1.8; color: #5a4a3a; margin-top: 2rem; font-style: italic; padding: 1.5rem; background: #f0dab3; border-left: 4px solid #d4af37; border-radius: 4px;"><strong>Das Endergebnis:</strong> Exclusive Unikate höchster Qualität mit einem unvergleichlichen Geschmack, den du nur bei echtem Handwerk findest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS SECTION -->
+<section class="animate-fadeUp" style="padding: 6rem 2rem; background: #fff;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    <div class="animate-slideDown" style="text-align: center; margin-bottom: 4rem;">
+      <p style="font-size: 0.9rem; letter-spacing: 2px; color: #8d6e63; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">AUSZEICHNUNGEN</p>
+      <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); color: #4a2c0a; font-weight: 900; margin-bottom: 1rem;">Die beste Schokolade Deutschlands</h2>
+      <div style="width: 60px; height: 4px; background: #d4af37; margin: 0 auto;"></div>
+    </div>
+    
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <p style="font-size: 1.1rem; color: #5a4a3a;">Mehrfach prämiert mit Gold, Silber und Bronze <strong>International Chocolate Awards 2018-2024</strong></p>
+    </div>
+    
+    <div style="text-align: center;">
+      <a href="awards.html" class="animate-pulse" style="padding: 14px 32px; background: linear-gradient(135deg, #d4af37, #c9a228); color: #4a2c0a; font-weight: 700; border-radius: 30px; text-decoration: none; transition: all 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.3); display: inline-block; letter-spacing: 0.5px;">ZU DEN AWARDS</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section class="animate-fadeUp" style="padding: 6rem 2rem; background: linear-gradient(180deg, #f5e7c6 0%, #f0dab3 100%);">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    <div class="animate-slideDown" style="text-align: center; margin-bottom: 4rem;">
+      <p style="font-size: 0.9rem; letter-spacing: 2px; color: #8d6e63; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">NACHHALTIGKEIT</p>
+      <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); color: #4a2c0a; font-weight: 900; margin-bottom: 1rem;">Hilfsprojekte & Frauen stärken</h2>
+      <div style="width: 60px; height: 4px; background: #d4af37; margin: 0 auto;"></div>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div class="animate-fadeInLeft" style="background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="font-size: 1.3rem; color: #4a2c0a; font-weight: 700; margin-bottom: 1rem;">🌍 Projekt Misky</h3>
+        <p style="color: #5a4a3a; line-height: 1.6;">Fördert Bildung und Selbstständigkeit von Frauen im Kakaoanbau der Region VRAEM.</p>
+      </div>
+      
+      <div class="animate-fadeInUp" style="background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="font-size: 1.3rem; color: #4a2c0a; font-weight: 700; margin-bottom: 1rem;">🌱 Projekt Inti</h3>
+        <p style="color: #5a4a3a; line-height: 1.6;">Stärkt Frauenkooperativen und fördert nachhaltige Landwirtschaftsmethoden.</p>
+      </div>
+      
+      <div class="animate-fadeInRight" style="background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="font-size: 1.3rem; color: #4a2c0a; font-weight: 700; margin-bottom: 1rem;">💪 Projekt Ailla</h3>
+        <p style="color: #5a4a3a; line-height: 1.6;">Unterstützt soziale Initiativen und die Gleichstellung der Frau.</p>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="projekt.html" class="animate-pulse" style="padding: 14px 32px; background: linear-gradient(135deg, #d4af37, #c9a228); color: #4a2c0a; font-weight: 700; border-radius: 30px; text-decoration: none; transition: all 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.3); display: inline-block; letter-spacing: 0.5px;">MEHR ERFAHREN</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="animate-fadeUp" style="padding: 6rem 2rem; background: #fff;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    <div class="animate-slideDown" style="text-align: center; margin-bottom: 4rem;">
+      <p style="font-size: 0.9rem; letter-spacing: 2px; color: #8d6e63; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">BESTSELLER</p>
+      <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); color: #4a2c0a; font-weight: 900; margin-bottom: 1rem;">Entdecke unsere Sorten</h2>
+      <div style="width: 60px; height: 4px; background: #d4af37; margin: 0 auto;"></div>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+      <div class="animate-fadeInLeft" style="background: #f5e7c6; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=788;0;787;0,width=400,height=400/image/390853606/324cd3f6-6bda-4404-8e84-3b5afc224e84.png" alt="Inti Schokolade" style="width: 100%; height: 300px; object-fit: cover;">
+        <div style="padding: 1.5rem;">
+          <p style="font-size: 0.85rem; color: #8d6e63; font-weight: 600; margin-bottom: 0.5rem;">PROJEKTSCHOKOLADE · GOLD 2024</p>
+          <h3 style="font-size: 1.2rem; color: #4a2c0a; font-weight: 700; margin-bottom: 0.5rem;">Inti 70%</h3>
+          <p style="color: #5a4a3a; margin-bottom: 1rem; min-height: 50px;">100% Chuncho-Kakao, ethisch und fair gehandelt.</p>
+          <a href="shop.html" style="padding: 10px 16px; background: #d4af37; color: #4a2c0a; border: none; border-radius: 20px; cursor: pointer; text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s;">KAUFEN</a>
+        </div>
+      </div>
+      
+      <div class="animate-fadeInUp" style="background: #f5e7c6; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;0;0,width=400,height=400/image/387265956/a7599660-c3cb-45fb-97ea-a94147f62aa9.jpg" alt="Piura Blanco" style="width: 100%; height: 300px; object-fit: cover;">
+        <div style="padding: 1.5rem;">
+          <p style="font-size: 0.85rem; color: #8d6e63; font-weight: 600; margin-bottom: 0.5rem;">RARITÄT · PIURA BLANCO</p>
+          <h3 style="font-size: 1.2rem; color: #4a2c0a; font-weight: 700; margin-bottom: 0.5rem;">Piura Blanco</h3>
+          <p style="color: #5a4a3a; margin-bottom: 1rem; min-height: 50px;">Die seltene weiße Kakaovariante Perus.</p>
+          <a href="shop.html" style="padding: 10px 16px; background: #d4af37; color: #4a2c0a; border: none; border-radius: 20px; cursor: pointer; text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s;">KAUFEN</a>
+        </div>
+      </div>
+      
+      <div class="animate-fadeInRight" style="background: #f5e7c6; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+        <img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=548;0;322;0,width=400,height=400/image/514633346/f59136a4-5c30-40e8-b2d3-4ddf0adf2e63.png" alt="Edel-Pralinen" style="width: 100%; height: 300px; object-fit: cover;">
+        <div style="padding: 1.5rem;">
+          <p style="font-size: 0.85rem; color: #8d6e63; font-weight: 600; margin-bottom: 0.5rem;">NEU · PREMIUM PRALINEN</p>
+          <h3 style="font-size: 1.2rem; color: #4a2c0a; font-weight: 700; margin-bottom: 0.5rem;">Edel-Pralinen</h3>
+          <p style="color: #5a4a3a; margin-bottom: 1rem; min-height: 50px;">Handgemachte Luxus-Pralinen aus Edelkakao.</p>
+          <a href="shop.html" style="padding: 10px 16px; background: #d4af37; color: #4a2c0a; border: none; border-radius: 20px; cursor: pointer; text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s;">KAUFEN</a>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="shop.html" class="animate-pulse" style="padding: 14px 32px; background: linear-gradient(135deg, #d4af37, #c9a228); color: #4a2c0a; font-weight: 700; border-radius: 30px; text-decoration: none; transition: all 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.3); display: inline-block; letter-spacing: 0.5px;">ZUM SHOP</a>
+    </div>
+  </div>
+</section>
+
+<footer style="background: #4a2c0a; color: #f5e7c6; padding: 3rem 2rem; text-align: center;">
+  <p style="margin-bottom: 1rem;">&copy; 2024 Meybol Cacao Germany GmbH. Alle Rechte vorbehalten.</p>
+  <p style="font-size: 0.9rem; opacity: 0.9;"><strong>Qualität mit Seele.</strong> Direkt vom Bauern, handgemacht und nachhaltig.</p>
+</footer>
+
+</body>
+</html>
 <!-- AI assistant widget placeholder (from research project) -->
 <button id="ai-toggle-btn" aria-label="Abrir asistente AI" style="position: fixed; bottom: 100px; right: 90px; width: 56px; height: 56px; border-radius: 50%; background: #002156; color: #fff; border: none; box-shadow: 0 4px 16px rgba(0,0,0,0.18); z-index: 10000; display: flex; align-items: center; justify-content: center; font-size: 28px; cursor: pointer; transition: background 0.2s;"><span id="ai-toggle-icon" style="display: block;">🤖</span></button>
 <div id="ai-chatbot-widget" style="position: fixed; bottom: 100px; right: 24px; width: 340px; max-width: 90vw; z-index: 9999; font-family: var(--font-body); box-shadow: 0 4px 24px rgba(0,0,0,0.18); border-radius: 16px 16px 8px 8px; background: #fff; display: none; flex-direction: column;">
