@@ -49,7 +49,7 @@
     <div class="nav__inner">
 
       <a class="nav__logo" href="index.html" aria-label="${t.logoAria}">
-        MEYBOL COFFEE
+        <img src="../img/Logo_Farbe_cmyk-01 (002).png" alt="Meybol Coffee Logo" style="height: 45px; width: auto;">
       </a>
 
       <ul class="nav__menu" id="nav-menu" role="menubar">

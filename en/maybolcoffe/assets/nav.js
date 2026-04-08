@@ -6,8 +6,8 @@
   <nav class="nav" role="navigation" aria-label="Hauptnavigation">
     <div class="nav__inner">
 
-      <a class="nav__logo" href="index.html" aria-label="Meybol Coffee – Startseite">
-        MEYBOL COFFEE
+      <a class="nav__logo" href="index.html" aria-label="Meybol Coffee – Home">
+        <img src="../img/Logo_Farbe_cmyk-01 (002).png" alt="Meybol Coffee Logo" style="height: 45px; width: auto;">
       </a>
 
       <ul class="nav__menu" id="nav-menu" role="menubar">

@@ -155,7 +155,6 @@ p  { margin-bottom: .9em; }
 .nav__logo img {
   height: 44px;
   width: auto;
-  filter: brightness(0) invert(1);
 }
 .nav__menu {
   display: flex;
