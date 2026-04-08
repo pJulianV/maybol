@@ -7,7 +7,7 @@
     <div class="nav__inner">
 
       <a class="nav__logo" href="index.html" aria-label="Meybol Coffee – Home">
-        <img src="../img/Logo_Farbe_cmyk-01 (002).png" alt="Meybol Coffee Logo" style="height: 45px; width: auto;">
+        <img src="../../img/IMAGENES DEL CAFÉ/Logo_Farbe_cmyk-01 (002).png" alt="Meybol Coffee Logo" style="height: 45px; width: auto;">
       </a>
 
       <ul class="nav__menu" id="nav-menu" role="menubar">
