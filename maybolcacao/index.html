@@ -25,26 +25,6 @@
   </form>
 </div>
 <script src="../ai-config.js"></script>
-<script>
-  const aiBtn = document.getElementById('ai-toggle-btn');
-  const aiWidget = document.getElementById('ai-chatbot-widget');
-  const aiIcon = document.getElementById('ai-toggle-icon');
-  const aiInput = aiWidget.querySelector('input[type="text"]');
-  const aiSend = aiWidget.querySelector('button[type="submit"]');
-  const aiChatArea = aiWidget.querySelector('div[style*="overflow-y: auto"]');
-  aiWidget.style.display = 'none';
-  aiInput.disabled = true;
-  aiSend.disabled = true;
-  let aiOpen = false;
-  
-  aiBtn.addEventListener('click', function() {
-    aiOpen = !aiOpen;
-    aiWidget.style.display = aiOpen ? 'flex' : 'none';
-    aiInput.disabled = !aiOpen;
-    aiSend.disabled = !aiOpen;
-    aiInput.focus();
-  });
-</script>
 
 <script src="assets/nav.js"></script>
 
@@ -396,29 +376,8 @@
       const msg = err?.message ? `No se pudo conectar con el asistente AI. (${err.message})` : 'No se pudo conectar con el asistente AI.';
       appendMessage(msg, 'ai');
     }
-
-    aiInput.disabled = false;
-    aiSend.disabled = false;
-    aiSend.style.cursor = 'pointer';
-    aiInput.focus();
   };
 </script>
-<script src="assets/nav.js"></script>
-
-
-<!-- HERO con animaciones modernas -->
-<section class="hero animate-fadeUp" style="min-height:70vh;position:relative;overflow:hidden;background:linear-gradient(120deg,#f5e7c6 60%,#e8d5b8 100%);">
-  <div class="hero__content animate-slideDown" style="position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;height:70vh;">
-    <p class="hero__subtitle animate-fadeInLeft" style="font-size:1.3rem;letter-spacing:2px;color:#7a5c3a;text-shadow:0 2px 8px #fff8;">Tree-to-Bar · Urkakao aus Peru</p>
-    <h1 class="hero__title animate-zoomIn" style="font-size:clamp(2.5rem,7vw,4.5rem);color:#4a2c0a;text-shadow:0 4px 24px #fff8;">Mehrfach prämierte<br>Edelschokolade</h1>
-    <p class="hero__lead animate-fadeInRight" style="color:#7a5c3a;font-size:1.2rem;max-width:600px;margin:1.5rem auto 2rem auto;text-shadow:0 2px 8px #fff8;">Handgemacht aus seltenen Chuncho-Kakaobohnen. Nachhaltig, fair und einzigartig im Geschmack.</p>
-    <div style="display:flex;gap:1.2rem;justify-content:center;">
-      <a href="shop.html" class="btn btn-primary animate-pulse">Jetzt entdecken</a>
-      <a href="awards.html" class="btn btn-outline animate-fadeInUp" style="border-color:rgba(212,175,55,.7);color:#7a5c3a;">Unsere Awards</a>
-    </div>
-  </div>
-  <div class="hero__scroll animate-bounce" style="position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);color:#7a5c3a;font-size:1.1rem;z-index:2;letter-spacing:2px;">scrollen ↓</div>
-</section>
 
 <!-- FEATURES STRIP -->
 <section class="section-pad bg-cream animate-fadeUp">
