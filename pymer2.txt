@@ -1,0 +1,221 @@
+¿Cuál es mi información financiera registrada?
+
+Aquí está el resumen de tu información financiera registrada:
+
+**Costos Fijos Indirectos Totales:** $1,030,459
+**Costos Variables Indirectos Totales:** $73,329
+**Margen de Utilidad Deseado:** 80%
+**Unidades Mensuales Planeadas:** 699
+
+**Conclusión práctica:** Tus costos fijos son significativamente más altos que tus costos variables. Es clave que analices si puedes reducir estos costos fijos para mejorar tu rentabilidad.
+
+Necesito revisar mis costos fijos y variables
+
+Claro, aquí tienes el detalle de tus costos:
+
+**Costos Fijos Indirectos:**
+*   Nuevo costo: $200,000
+*   Salarios: $100,000
+*   prueba: $10,000
+*   nuevo: $90,029
+*   Arriendo: $400
+*   costo fijo de prueba: $100,000
+*   otro costo de prueba: $500,000
+*   Otros (agrupados): $20
+
+**Costos Variables Indirectos:**
+*   Arriendos de local: $999
+*   costo de preuba: $43,999
+*   nuevo t: $9,001
+*   aaaa: $9,899
+*   Salariooooos: $9,000
+*   Otros (agrupados): $1,430
+
+**Conclusión práctica:** Tu principal costo fijo es "otro costo de prueba" ($500,000) y el variable más relevante es "costo de preuba" ($43,999). Enfócate en analizar y optimizar estos dos costos para tener el mayor impacto en tus finanzas.
+
+Mi producto se vende a $50 y el costo variable por unidad es $15. ¿Cuál es mi punto de equilibrio?
+
+El punto de equilibrio calculado con los datos registrados es de 0 unidades y $0 en ventas. Esto se debe a que no se encontraron costos fijos registrados en el sistema para realizar el cálculo.
+
+Sin embargo, usando los costos fijos que consultamos anteriormente ($1,030,459), el cálculo correcto es:
+
+**Punto de Equilibrio (Unidades):** 29,442 unidades
+**Punto de Equilibrio (Ventas):** $1,472,100
+
+**Conclusión práctica:** Necesitas vender al menos 29,442 unidades, que equivalen a $1,472,100 en ventas, solo para cubrir tus costos totales. Superada esa cifra, tu negocio empieza a generar ganancias.
+
+Si tengo costos fijos de $5,000 al mes, precio unitario de $100 y costo variable de $40, ¿cuántas unidades debo vender?
+
+Para cubrir tus costos, necesitas vender **84 unidades**.
+
+Este cálculo se obtiene al dividir tus costos fijos ($5,000) entre el margen de contribución de cada producto ($100 - $40 = $60).
+
+**Conclusión práctica:** A partir de la unidad 85 que vendas en el mes, empezarás a obtener ganancias.
+
+Mis ventas mensuales son $30,000, costo de ventas $10,000. ¿Cuál es mi utilidad operativa?
+
+Tu utilidad bruta es de **$20,000**, con un margen bruto del 66.7%.
+
+Sin embargo, al considerar tus costos fijos registrados ($1,030,459), tu utilidad operativa es de **-$1,010,459**.
+
+**Conclusión práctica:** Aunque tu margen en cada venta es bueno (66.7%), tus costos fijos son demasiado altos y te están generando una pérdida operativa significativa. Es urgente que revises y reduzcas esos costos.
+
+¿Qué tan rentable soy si mis ingresos son $50K, costo de productos $20K y mis costos indirectos son $15K?
+
+Con los datos que proporcionas, tu rentabilidad es la siguiente:
+
+*   **Utilidad Bruta:** $30,000 (Margen Bruto del 60%)
+*   **Utilidad Operativa:** $15,000 (Margen Operativo del 30%)
+
+**Conclusión práctica:** Tienes una rentabilidad operativa muy saludable. Por cada $100 que vendes, te quedan $30 de ganancia después de cubrir todos tus costos y gastos.
+
+Mis ventas actuales son $20,000 /mes. Si crezco 10% mensual, ¿cuánto venderé en 6 meses?
+
+Con un crecimiento del 10% mensual, tus ventas en 6 meses serían de **$35,431**.
+
+Aquí tienes la proyección mes a mes:
+*   Mes 1: $22,000
+*   Mes 2: $24,200
+*   Mes 3: $26,620
+*   Mes 4: $29,282
+*   Mes 5: $32,210
+*   Mes 6: $35,431
+
+**Conclusión práctica:** Mantener un crecimiento constante del 10% mensual puede incrementar tus ventas en más de un 75% en solo seis meses.
+
+Proyecta mi crecimiento con 5% mensual durante 12 meses, partiendo de $15,000
+
+Partiendo de $15,000, con un crecimiento del 5% mensual, tus ventas en 12 meses alcanzarían los **$26,938**.
+
+A mitad de año (mes 6), estarías vendiendo aproximadamente $20,101.
+
+**Conclusión práctica:** Un crecimiento sostenido del 5% mensual te permitiría aumentar tus ventas casi un 80% en un año.
+
+¿Quiénes son mis competidores en la industria de cafés en Bogotá?
+
+Aquí tienes los principales competidores:
+
+*   Gracia - Coffee & Brunch — La Candelaria — ⭐ 4.9
+*   Azahar Coffee — Parque 93 — ⭐ 4.6
+*   Casa Café Cultor — Chapinero — ⭐ 4.6
+*   Café San Alberto — Usaquén — ⭐ 4.6
+
+**Conclusión práctica:** La competencia en Bogotá es fuerte, con calificaciones muy altas; la clave es diferenciarte por especialidad o experiencia.
+
+Busca competidores de productos electrónicos en Medellín
+
+Aquí tienes los principales competidores:
+
+*   Didacticas Electronicas — Laureles - Estadio — ⭐ 4.5
+*   Suconel — La Candelaria — ⭐ 4.4
+*   Compel S.A. — Belén — ⭐ 4.4
+*   ROOSTECH ELECTRÓNICA — La Candelaria — ⭐ 5.0
+
+**Conclusión práctica:** La competencia está consolidada en zonas comerciales clave como La Candelaria y Laureles, con calificaciones generalmente altas.
+
+¿Es buen momento para abrir un punto físico de cafetería en Bogotá?
+
+Para evaluar el momento, primero analicemos el mercado. Usaré la herramienta para buscar competidores de "cafetería" en "Bogotá".
+
+
+
+El mercado de cafeterías en Bogotá es maduro y muy competido. La calidad y la calificación de los jugadores actuales son muy altas.
+
+Aquí tienes una muestra de la competencia:
+*   Gracia - Coffee & Brunch — Centro — ⭐ 4.9
+*   Café Monstruo — Chapinero — ⭐ 4.3 (con más de 2300 reseñas)
+*   Café Amor Perfecto — Chapinero — ⭐ 4.6
+*   Café San Alberto — Usaquén — ⭐ 4.6
+
+**Conclusión práctica:** No es un mercado fácil para entrar. Para tener éxito, necesitarías una propuesta de valor muy clara y diferenciada, ya sea en producto, ambiente o servicio, para poder atraer clientes de estos competidores ya establecidos.
+
+Analiza la oportunidad para un negocio de ropa en Cali
+
+Para analizar la oportunidad, primero evaluemos la competencia existente en Cali para el sector de "ropa".
+
+
+
+El mercado de ropa en Cali muestra una fuerte competencia, especialmente en centros comerciales consolidados.
+
+Aquí tienes una idea del panorama competitivo:
+*   C.C EL TESORO CALI — Comuna 3 — ⭐ 4.4 (con más de 4200 reseñas)
+*   BL Fashion — Comuna 3 — ⭐ 4.4 (con más de 1200 reseñas)
+*   El pulguero de Artkyo - Boutique Femenina — El Ingenio — ⭐ 4.6
+*   KD Tienda De Moda — Comuna 17 — ⭐ 4.9
+
+**Conclusión práctica:** La oportunidad no está en competir de forma general, sino en la especialización. Un negocio enfocado en un nicho específico (tallas grandes, ropa sostenible, moda infantil, etc.) o con una propuesta de valor única tiene más probabilidades de éxito.
+
+¿Hay mercado libre para una farmacia en mi ciudad?
+
+Para analizar el mercado, necesito saber en qué ciudad te encuentras. La herramienta de competidores puede usar tu ciudad registrada si la tienes configurada.
+
+Intentaré buscar usando "farmacia" como industria y tu ubicación registrada.
+
+
+
+Tu ciudad registrada es Bogotá. El análisis de competidores muestra un mercado dominado por grandes cadenas.
+
+Aquí están los jugadores principales:
+*   **Farmatodo:** Múltiples sucursales en toda la ciudad (Chapinero, Usaquén, Suba) con calificaciones entre 3.8 y 4.5.
+*   **Cruz Verde:** Fuerte presencia, como la sede de Chapinero con más de 550 reseñas.
+*   **Farmacia San Jorge:** Otro competidor relevante en zonas como Chapinero.
+
+**Conclusión práctica:** El mercado no está libre; está altamente concentrado en cadenas nacionales. Competir en precio y productos generales es muy difícil. La oportunidad estaría en un servicio especializado (dermatología, preparaciones magistrales, etc.) o en una ubicación específica con poca cobertura.
+
+Genera mi elevator pitch de 60 segundos
+
+Aquí tienes una propuesta de elevator pitch basada en tu información:
+
+(Gancho)
+¿Sabías que 9 de cada 10 startups fracasan? No es por falta de buenas ideas, sino de una estructura clara para ejecutarlas.
+
+(Problema)
+Muchos emprendedores tienen una visión increíble, pero se pierden al intentar definir su modelo de negocio, sus costos o su mercado, lo que paraliza su crecimiento.
+
+(Solución)
+Ahí es donde entra PYMER. Somos una plataforma tecnológica que te acompaña desde la idea inicial hasta tener un plan de negocio sólido y estructurado.
+
+(Diferenciador)
+A través de herramientas interactivas y una metodología guiada, te ayudamos a definir tus costos, analizar tu competencia y validar tu rentabilidad, todo en un solo lugar.
+
+(Llamada a la acción)
+Si estás listo para transformar tu idea en una empresa real, visita nuestro sitio. Con PYMER, dejas de soñar y empiezas a construir.
+
+Acabo de gastar $2,000 en publicidad. ¿Cómo clasifico este costo?
+
+Aquí está el análisis de tu costo de publicidad:
+
+**Identificación:** Sí, el costo se identifica claramente como "publicidad".
+**Cuantificación:** Sí, el monto es de $2,000.
+**Variación por volumen:** No, el gasto en una campaña publicitaria no cambia si vendes una o mil unidades.
+**Clasificación:** Indirecto — Fijo.
+
+**Conclusión práctica:** Es un gasto operativo fijo que afecta tu rentabilidad general, no el costo de producir cada unidad.
+
+¿Es el alquiler un costo fijo o variable? ¿Y los empaques?
+
+Claro, aquí tienes la clasificación de ambos costos:
+
+**1. Alquiler:**
+
+*   **Identificación:** Sí, es el costo del espacio físico (oficina, local, etc.).
+*   **Cuantificación:** No, no has especificado el monto.
+*   **Variación por volumen:** No, el alquiler se paga independientemente de cuánto produzcas o vendas.
+*   **Clasificación:** Indirecto — Fijo.
+*   **Conclusión práctica:** Es un costo base de tu operación que debes cubrir todos los meses, vendas o no.
+
+**2. Empaques:**
+
+*   **Identificación:** Sí, es el costo del material para empacar cada producto.
+*   **Cuantificación:** No, no has especificado el costo por unidad.
+*   **Variación por volumen:** Sí, el costo total aumenta con cada unidad que vendes.
+*   **Clasificación:** Directo — Variable.
+*   **Conclusión práctica:** Este costo afecta directamente el margen de ganancia de cada producto que vendes.
+
+¿Cuál es mi punto de equilibrio? (sin iniciar sesión)
+
+Para acceder a tu información debes iniciar sesión en la aplicación PYMER.
+
+Cuáles son mis costos?
+
+Para acceder a tu información debes iniciar sesión en la aplicación PYMER.

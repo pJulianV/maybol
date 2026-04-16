@@ -60,3 +60,6 @@ https://www.youtube.com/watch?v=yNjE6PkGpA8
 ---
 
 seccion awards https://enter.chocolateawards.com/ (referida en la web)
+
+
+prioridad: shop funcional, portada 
